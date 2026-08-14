@@ -53,9 +53,7 @@ function Play() {
           <div className="space-y-6">
             <QuickAnswer label="How to play">
               <p className="text-muted-foreground">
-                Drag your cursor horizontally over the image. Each position maps to one of 24 frames, so you control the
-                speed and timing of the slap. On a phone, swipe. With a keyboard, focus the image and use the left and
-                right arrow keys, or Home and End to jump to either extreme.
+                Drag your cursor horizontally over the embedded window. The timing of the slap is controlled by your mouse position. On a touch device, swipe across the window to initiate the animation.
               </p>
             </QuickAnswer>
 
