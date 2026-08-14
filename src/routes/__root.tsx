@@ -111,8 +111,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "WebSite",
           name: "Eel Slap Archive",
           description:
-            "An independent archive documenting Eel Slap: the interactive animation, its history and the culture of single-serving websites.",
-          publisher: { "@type": "Organization", name: "Eel Slap Archive" },
+            "The definitive digital preservation archive for Eel Slap. Documenting the original 2011 interactive meme, its history, the guy behind the slap, and the science of browser toys.",
+          publisher: {
+            "@type": "Organization",
+            name: "Eel Slap Archive",
+            logo: "https://eelslap.archive/logo.png",
+            knowsAbout: ["Internet Meme History", "Web Preservation", "Interactive Design", "Flash Games Era"]
+          },
           potentialAction: {
             "@type": "SearchAction",
             target: "/sitemap?q={search_term_string}",

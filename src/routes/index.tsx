@@ -102,8 +102,7 @@ function Home() {
               Experience the legendary <span className="text-gradient">Eel Slap</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              Discover the iconic internet meme, play the famous Eel Slap animation, learn its history, explore fun
-              facts, and uncover why this quirky classic has entertained millions across the web.
+              Experience the iconic <strong className="text-foreground font-semibold">eel slap game</strong> exactly as it was in 2011. Our archive preserves the original <strong className="text-foreground font-semibold">slapping eel</strong> animation with modern performance, serving as the definitive resource for <strong className="text-foreground font-semibold">the slap website</strong> history and culture.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Button asChild size="lg" className="bg-gradient-primary rounded-full px-7 font-semibold shadow-glow">

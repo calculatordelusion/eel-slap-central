@@ -103,6 +103,13 @@ const SECTIONS: Section[] = [
       "Preservation efforts tend to focus on games and art. Toys like this one deserve the same attention, because they document how ordinary people actually used the browser for fun.",
     ],
   },
+  {
+    heading: "Archive vs. Mirrors: Finding the original website",
+    paragraphs: [
+      "Searching for 'Eel Slap' often returns multiple versions. The original was hosted at eelslap.com, but as the web moved from Flash and legacy scripts, several mirrors appeared. Some simply embed the old site, while others (like this archive) rebuild the interaction to ensure it remains smooth on modern Retina displays and mobile devices.",
+      "Our mission is to provide the definitive, ad-free experience that preserves the original high-speed responsiveness of the 2011 classic without the technical rot common in older mirrors.",
+    ],
+  },
 ];
 
 function History() {
