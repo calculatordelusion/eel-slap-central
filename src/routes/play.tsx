@@ -47,10 +47,12 @@ function Play() {
       />
 
       <Container className="py-14">
-        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-          <EelSlap />
+        <div className="grid gap-10 lg:grid-cols-[1fr]">
+          <div className="flex justify-center">
+            <EelSlap className="max-w-[800px]" />
+          </div>
 
-          <div className="space-y-6">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <QuickAnswer label="How to play">
               <p className="text-muted-foreground">
                 Drag your cursor horizontally over the embedded window. The timing of the slap is controlled by your mouse position. On a touch device, swipe across the window to initiate the animation.

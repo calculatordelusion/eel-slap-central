@@ -68,8 +68,7 @@ export function EelSlap({ className = "" }: Props) {
       // Original eelslap.com feels very snappy. 
       // Using a factor of 0.2-0.3 for a more responsive follow.
       // currentPosition += (targetPosition - currentPosition) * factor
-      const lerpFactor = 0.25; 
-      currentPosition.current += (targetPosition.current - currentPosition.current) * lerpFactor;
+      const lerpFactor = 0.4; // Increased from 0.25 for even faster response
       
       const canvas = canvasRef.current;
       const ready = isReady;
