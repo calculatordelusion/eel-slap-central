@@ -89,6 +89,13 @@ const SECTIONS: Section[] = [
       "Most of that neighbourhood is gone. Eel Slap survived because it was built out of the plainest possible materials — images and a little script — and therefore had nothing to break.",
     ],
   },
+  {
+    heading: "The digital preservation mission",
+    paragraphs: [
+      "This archive exists to do more than just mirror the original experience. We are dedicated to the preservation of 'single-serving' web culture—a era between 2007 and 2013 where a joke could be a standalone domain and a link was the unit of currency.",
+      "By rebuilding the engine for modern browsers and documenting the technical context, we ensure that the specific 'feel' of the original fish slap remains accessible as the web's underlying infrastructure continues to evolve.",
+    ],
+  },
 ];
 
 function About() {
