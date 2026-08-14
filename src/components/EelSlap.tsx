@@ -89,6 +89,10 @@ export function EelSlap({ className = "" }: Props) {
           const images = imagesRef.current;
           const img = images[imageIndex];
           if (img && img.complete && img.naturalWidth > 0) {
+            // Fill the background to avoid ghosting/doubling
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, frameWidth, frameHeight);
+            
             ctx.drawImage(
               img,
               frameInImage * frameWidth, 0, frameWidth, frameHeight,
