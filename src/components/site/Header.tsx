@@ -95,7 +95,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <Button asChild size="sm" className="bg-gradient-primary hidden rounded-full font-semibold sm:inline-flex">
-            <Link to="/play">Play Eel Slap</Link>
+            <Link to="/">Play Eel Slap</Link>
           </Button>
           <Button
             variant="ghost"
