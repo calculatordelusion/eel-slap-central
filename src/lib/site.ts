@@ -1,7 +1,7 @@
 export const SITE = {
   name: "Eel Slap",
   tagline: "The complete guide to the internet's most oddly satisfying eel",
-  publisher: "Eel Slap Archive",
+  publisher: "Eel Slap",
   updated: "2026-08-14",
   reviewed: "2026-08-14",
 };

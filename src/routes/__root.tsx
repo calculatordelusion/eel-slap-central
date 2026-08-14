@@ -90,11 +90,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Eel Slap Archive" },
       { name: "theme-color", content: "#0b1729" },
       { name: "google-site-verification", content: "google2c7d897443d38cf6" },
-      { property: "og:site_name", content: "Eel Slap Archive" },
+      { property: "og:site_name", content: "Eel Slap" },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "https://eel-slap-archive.lovable.app/social-share.png" },
+      { property: "og:image", content: "https://eelslap.net/social-share.png" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "https://eel-slap-archive.lovable.app/social-share.png" },
+      { name: "twitter:image", content: "https://eelslap.net/social-share.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -114,14 +114,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          name: "Eel Slap Archive",
+          name: "Eel Slap",
           description:
             "The definitive digital preservation archive for Eel Slap! Documenting the original 2011 interactive meme, its history, the guy behind the slap, and the science of browser toys.",
-          image: "https://eel-slap-archive.lovable.app/social-share.png",
+          image: "https://eelslap.net/social-share.png",
           publisher: {
             "@type": "Organization",
-            name: "Eel Slap Archive",
-            logo: "https://eel-slap-archive.lovable.app/favicon.ico",
+            name: "Eel Slap",
+            logo: "https://eelslap.net/favicon.ico",
             description: "The official archive and research hub for Eel Slap! and internet meme culture.",
             knowsAbout: [
               "Eel Slap Game",
