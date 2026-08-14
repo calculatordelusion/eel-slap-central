@@ -85,7 +85,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "What was the original Eel Slap website?",
-    a: "The original Eel Slap was published at eelslap.com in 2011. Since then, several mirrors and copies have appeared to preserve the 'slapping with a fish' experience, including eelslap.org and this definitive archive, which is optimized to be the best and fastest way to play the eel slap game online today.",
+    a: "The original Eel Slap was published at eelslap.com in 2011. Since then, several mirrors and copies have appeared to preserve the 'slapping with a fish' experience, including eelslap.org and this definitive archive at eelslap.net, which is optimized to be the best and fastest way to play the eel slap game online today.",
   },
 ];
 
