@@ -14,7 +14,7 @@ export const Route = createFileRoute("/blog/")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/blog" },
+      { property: "og:url", content: "https://eelslap.net/blog" },
     ],
     links: [{ rel: "canonical", href: "/blog" }],
     scripts: [
