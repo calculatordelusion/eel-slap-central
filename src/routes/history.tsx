@@ -93,7 +93,7 @@ const SECTIONS: Section[] = [
     heading: "Copies, mirrors and confusion",
     paragraphs: [
       "As with most durable joke sites, Eel Slap acquired imitators on adjacent domains. Some are faithful mirrors, some add advertising, some rebuild the effect from scratch. This is why searches for the site return several near-identical results.",
-      "For readers, the practical point is that the interaction is essentially the same everywhere; what differs is how much clutter surrounds it. This archive is not affiliated with any of those domains.",
+      "For readers, the practical point is that the interaction is essentially the same everywhere; what differs is how much clutter surrounds it. This site is an independent effort to maintain the highest quality version of the experience.",
     ],
   },
   {
@@ -104,9 +104,9 @@ const SECTIONS: Section[] = [
     ],
   },
   {
-    heading: "Archive vs. Mirrors: Finding the original website",
+    heading: "Versions vs. Mirrors: Finding the original website",
     paragraphs: [
-        "Searching for 'Eel Slap' often returns multiple versions. The original was hosted at eelslap.com, but as the web moved from Flash and legacy scripts, several mirrors appeared. Some simply embed the old site, while others (like this archive at eelslap.net) rebuild the interaction to ensure it remains smooth on modern Retina displays and mobile devices.",
+        "Searching for 'Eel Slap' often returns multiple versions. The original was hosted at eelslap.com, but as the web moved from Flash and legacy scripts, several mirrors appeared. Some simply embed the old site, while others (like this definitive version at eelslap.net) maintain the interaction to ensure it remains smooth on modern Retina displays and mobile devices.",
         "Our mission is to provide the definitive, ad-free experience that preserves the original high-speed responsiveness of the 2011 classic without the technical rot common in older mirrors.",
     ],
   },
