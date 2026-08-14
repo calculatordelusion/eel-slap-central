@@ -142,7 +142,7 @@ function FunFacts() {
           links={[
             { label: "FAQ", to: "/faq", description: "Direct answers to common questions." },
             { label: "How it works", to: "/how-it-works", description: "The technical detail behind fact six." },
-            { label: "Play Eel Slap", to: "/play", description: "Test the slow-versus-fast theory yourself." },
+            { label: "Play Eel Slap", to: "/", description: "Test the slow-versus-fast theory yourself." },
           ]}
         />
       </Container>
