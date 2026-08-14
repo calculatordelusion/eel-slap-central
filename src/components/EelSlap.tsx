@@ -51,9 +51,10 @@ export function EelSlap({ className = "" }: Props) {
   }, []);
 
   const handleMouseMove = (e: React.MouseEvent | React.TouchEvent) => {
-    if (!containerRef.current) return;
+    const container = containerRef.current;
+    if (!container) return;
     
-    const rect = containerRef.current.getBoundingClientRect();
+    const rect = container.getBoundingClientRect();
     let clientX: number;
     
     if ('touches' in e) {
