@@ -7,7 +7,7 @@ import { AuthorBox, Container, PageHeader, RelatedLinks } from "@/components/sit
 
 const title = "Eel Slap Gallery — Frames, Assets and Visual Anatomy";
 const description =
-  "A visual breakdown of the Eel Slap animation: the portrait, the eel asset, the swing arc and the ocean-inspired art direction used throughout this archive.";
+  "A visual breakdown of the Eel Slap animation: the frames, the swing arc and the ocean-inspired art direction used throughout this site.";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -48,36 +48,8 @@ function Gallery() {
           </p>
         </div>
 
-        <h2 className="mt-16 text-2xl font-bold">The assets</h2>
-        <div className="mt-6 grid gap-5 md:grid-cols-3">
-          <figure className="overflow-hidden rounded-2xl border border-border bg-card">
-            <img
-              src={portrait}
-              alt="Illustrated portrait used as the base layer of the animation"
-              loading="lazy"
-              width={816}
-              height={816}
-              className="aspect-[4/3] w-full object-cover"
-            />
-            <figcaption className="p-4 text-sm text-muted-foreground">
-              The base portrait. A neutral expression and centred framing keep attention on the eel.
-            </figcaption>
-          </figure>
-          <figure className="overflow-hidden rounded-2xl border border-border bg-card">
-            <div className="bg-gradient-hero grid aspect-[4/3] place-items-center p-6">
-              <img
-                src={eelImg}
-                alt="The eel asset rendered against a gradient background"
-                loading="lazy"
-                width={1152}
-                height={576}
-                className="w-full"
-              />
-            </div>
-            <figcaption className="p-4 text-sm text-muted-foreground">
-              The eel, isolated with transparency so it can be rotated and translated independently.
-            </figcaption>
-          </figure>
+        <h2 className="mt-16 text-2xl font-bold">Visual style</h2>
+        <div className="mt-6 grid gap-5 md:grid-cols-2">
           <figure className="overflow-hidden rounded-2xl border border-border bg-card">
             <img
               src={heroBg}
@@ -85,12 +57,18 @@ function Gallery() {
               loading="lazy"
               width={1920}
               height={1088}
-              className="aspect-[4/3] w-full object-cover"
+              className="aspect-video w-full object-cover"
             />
             <figcaption className="p-4 text-sm text-muted-foreground">
-              The art direction: deep navy, electric blue and aqua, with soft violet light for depth.
+              The art direction: deep navy, electric blue and aqua, with soft violet light for depth, reflecting the 'wet' nature of the eel slap meme.
             </figcaption>
           </figure>
+          <div className="rounded-2xl border border-border bg-muted/30 p-8 flex flex-col justify-center">
+            <h3 className="text-xl font-bold">Preserving the aesthetic</h3>
+            <p className="mt-3 leading-relaxed text-muted-foreground">
+              Our design language bridges the gap between 2011's 'simple web' and modern high-end UX. We use glassmorphism, depth-focused gradients, and precise typography to ensure the focus remains on the animation itself.
+            </p>
+          </div>
         </div>
 
         <div className="mt-16 max-w-3xl">
