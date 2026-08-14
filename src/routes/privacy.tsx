@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Container, PageHeader, SectionRenderer } from "@/components/site/Page";
 import type { Section } from "@/lib/site";
 
-const title = "Privacy Policy — Eel Slap Archive";
+const title = "Privacy Policy — Eel Slap";
 const description =
   "How the Eel Slap Archive handles personal data: what we collect, why, how long we keep it, and the rights you have over it.";
 

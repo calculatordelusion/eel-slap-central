@@ -13,7 +13,7 @@ export const Route = createFileRoute("/resources")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/resources" },
+      { property: "og:url", content: "https://eelslap.net/resources" },
     ],
     links: [{ rel: "canonical", href: "/resources" }],
   }),

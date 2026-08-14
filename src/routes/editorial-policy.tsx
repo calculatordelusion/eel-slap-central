@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Container, PageHeader, RelatedLinks, SectionRenderer } from "@/components/site/Page";
 import type { Section } from "@/lib/site";
 
-const title = "Editorial & Fact-Checking Policy — Eel Slap Archive";
+const title = "Editorial & Fact-Checking Policy — Eel Slap";
 const description =
   "How the Eel Slap Archive researches, writes, reviews and corrects its content, including our sourcing standards, update schedule and independence statement.";
 
@@ -14,7 +14,7 @@ export const Route = createFileRoute("/editorial-policy")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/editorial-policy" },
+      { property: "og:url", content: "https://eelslap.net/editorial-policy" },
     ],
     links: [{ rel: "canonical", href: "/editorial-policy" }],
   }),
@@ -25,7 +25,7 @@ const SECTIONS: Section[] = [
   {
     heading: "Who writes this site",
     paragraphs: [
-      "The Eel Slap Archive is an independent project run by a small editorial team with backgrounds in web development and internet history. We are not affiliated with eelslap.com, eelslap.org or any mirror of the original site.",
+      "The Eel Slap Archive is an independent project run by a small editorial team with backgrounds in web development and internet history. We are not affiliated with eelslap.com, eelslap.org or any other legacy mirror of the original site.",
     ],
   },
   {

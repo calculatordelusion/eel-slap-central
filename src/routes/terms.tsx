@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Container, PageHeader, SectionRenderer } from "@/components/site/Page";
 import type { Section } from "@/lib/site";
 
-const title = "Terms of Use — Eel Slap Archive";
+const title = "Terms of Use — Eel Slap";
 const description =
   "The terms that apply when you use the Eel Slap Archive: acceptable use, intellectual property, external links and limitation of liability.";
 
@@ -14,7 +14,7 @@ export const Route = createFileRoute("/terms")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/terms" },
+      { property: "og:url", content: "https://eelslap.net/terms" },
     ],
     links: [{ rel: "canonical", href: "/terms" }],
   }),

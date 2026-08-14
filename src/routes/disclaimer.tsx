@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Container, PageHeader, SectionRenderer } from "@/components/site/Page";
 import type { Section } from "@/lib/site";
 
-const title = "Disclaimer — Eel Slap Archive";
+const title = "Disclaimer — Eel Slap";
 const description =
   "Independence, accuracy and scope: what this Eel Slap resource is, what it is not, and how to read its historical claims.";
 
@@ -14,7 +14,7 @@ export const Route = createFileRoute("/disclaimer")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/disclaimer" },
+      { property: "og:url", content: "https://eelslap.net/disclaimer" },
     ],
     links: [{ rel: "canonical", href: "/disclaimer" }],
   }),
