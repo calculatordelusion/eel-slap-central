@@ -55,7 +55,7 @@ const SECTIONS: Section[] = [
   {
     heading: "Review schedule",
     paragraphs: [
-      "Every page carries a last-reviewed date. Reference pages are re-read at least twice a year; anything touching a live external site is checked more often, because link rot is the main way an archive quietly becomes wrong.",
+      "Every page carries a last-reviewed date. Reference pages are re-read at least twice a year; anything touching a live external site is checked more often, because link rot is the main way a resource quietly becomes wrong.",
     ],
   },
   {
