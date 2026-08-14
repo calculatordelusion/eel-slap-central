@@ -5,7 +5,7 @@ type Props = {
   chrome?: boolean;
 };
 
-export function EelSlap({ className = "" }: Props) {
+export function EelSlap({ className = "", fullPage = false }: Props & { fullPage?: boolean }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [loadedCount, setLoadedCount] = useState(0);
@@ -115,34 +115,46 @@ export function EelSlap({ className = "" }: Props) {
     return () => cancelAnimationFrame(animationFrameId);
   }, [isReady]);
 
-  const handlePointerMove = (e: React.MouseEvent | React.TouchEvent) => {
-    const container = containerRef.current;
-    if (!container) return;
-    
-    const rect = container.getBoundingClientRect();
-    let clientX: number;
-    
-    if ('touches' in e) {
-      const touchEvent = e as React.TouchEvent;
-      const touches = touchEvent.touches;
-      if (touches && touches.length > 0) {
-        const touch = touches[0];
-        if (touch) {
-          clientX = touch.clientX;
+  useEffect(() => {
+    const handleGlobalPointerMove = (e: MouseEvent | TouchEvent) => {
+      const container = containerRef.current;
+      if (!container || !isReady) return;
+      
+      const rect = container.getBoundingClientRect();
+      let clientX: number;
+      
+      if ('touches' in e) {
+        const touchEvent = e as TouchEvent;
+        const touches = touchEvent.touches;
+        if (touches && touches.length > 0) {
+          clientX = touches[0].clientX;
         } else {
           return;
         }
       } else {
-        return;
+        clientX = (e as MouseEvent).clientX;
       }
-    } else {
-      clientX = (e as React.MouseEvent).clientX;
-    }
 
-    const relativeX = clientX - rect.left;
-    const scaledX = (relativeX / rect.width) * sourceFrameWidth;
-    targetPosition.current = sourceFrameWidth - Math.max(0, Math.min(sourceFrameWidth, scaledX));
-  };
+      // Map clientX to the relative width of the container
+      // If clientX < rect.left, it's 0. If clientX > rect.right, it's 1.
+      const relativeX = (clientX - rect.left) / rect.width;
+      const clampedX = Math.max(0, Math.min(1, relativeX));
+      
+      // Calculate targetPosition based on sourceFrameWidth (320)
+      targetPosition.current = sourceFrameWidth - (clampedX * sourceFrameWidth);
+    };
+
+    window.addEventListener('mousemove', handleGlobalPointerMove);
+    window.addEventListener('touchmove', handleGlobalPointerMove, { passive: false });
+
+    return () => {
+      window.removeEventListener('mousemove', handleGlobalPointerMove);
+      window.removeEventListener('touchmove', handleGlobalPointerMove);
+    };
+  }, [isReady]);
+
+  // Remove local handlers from the div
+  const handlePointerMove = () => {};
 
   return (
     <div 
@@ -150,7 +162,7 @@ export function EelSlap({ className = "" }: Props) {
       ref={containerRef}
       onMouseMove={handlePointerMove}
       onTouchMove={handlePointerMove}
-      style={{ touchAction: 'none', cursor: 'crosshair' }}
+      style={{ touchAction: 'none' }}
     >
       {!isReady && (
         <div className="absolute inset-0 flex items-center justify-center z-50 bg-black text-white text-4xl font-bold tracking-widest animate-pulse font-sans text-center px-4">
