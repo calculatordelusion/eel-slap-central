@@ -78,7 +78,6 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
-    links: [{ rel: "canonical", href: "https://eelslap.net/" }],
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -88,7 +87,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "The definitive Eel Slap! archive. Play the original eel slap game, watch the slapping eel, and explore the history of the slap website. Safe, ad-free preservation.",
       },
-      { name: "author", content: "Eel Slap Archive" },
+      { name: "author", content: "Eel Slap" },
       { name: "theme-color", content: "#0b1729" },
       { name: "google-site-verification", content: "google2c7d897443d38cf6" },
       { property: "og:site_name", content: "Eel Slap" },
@@ -98,6 +97,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:image", content: "https://eelslap.net/social-share.png" },
     ],
     links: [
+      { rel: "canonical", href: "https://eelslap.net/" },
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "shortcut icon", href: "/favicon.ico" },
