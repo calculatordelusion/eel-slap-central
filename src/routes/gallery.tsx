@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import portrait from "@/assets/slap-portrait.jpg";
 import eelImg from "@/assets/eel.png";
 import heroBg from "@/assets/hero-ocean.jpg";
+import EelSlap from "@/components/EelSlap";
 import { AuthorBox, Container, PageHeader, RelatedLinks } from "@/components/site/Page";
 
 const title = "Eel Slap Gallery — Frames, Assets and Visual Anatomy";
@@ -35,50 +36,18 @@ function Gallery() {
         trail={[{ label: "Gallery" }]}
       />
       <Container className="py-14">
-        <h2 className="text-2xl font-bold">Key frames</h2>
+        <h2 className="text-2xl font-bold">The original interaction</h2>
         <p className="mt-3 max-w-2xl leading-relaxed text-muted-foreground">
-          A full slap is 24 frames. These six mark the moments that matter: the approach, the wind-up, the arc, contact,
-          follow-through and rest.
+          The Eel Slap experience uses a high-performance canvas engine to map your cursor's horizontal movement to a 93-frame sequence of panoramas, creating the illusion of a fluid physical slap.
         </p>
 
-        <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {FRAMES.map((p, i) => {
-            const impact = Math.max(0, (p - 0.62) / 0.38);
-            return (
-              <li key={i} className="overflow-hidden rounded-2xl border border-border bg-card">
-                <div className="relative aspect-square overflow-hidden">
-                  <img
-                    src={portrait}
-                    alt={`Eel slap key frame ${i + 1}: the eel at ${Math.round(p * 100)} percent of its swing`}
-                    loading="lazy"
-                    width={816}
-                    height={816}
-                    className="absolute inset-0 h-full w-full object-cover"
-                    style={{ transform: `rotate(${-impact * 7}deg) scale(1.04)` }}
-                  />
-                  <img
-                    src={eelImg}
-                    alt=""
-                    aria-hidden="true"
-                    loading="lazy"
-                    width={1152}
-                    height={576}
-                    className="absolute left-1/2 top-1/2 w-[125%] max-w-none"
-                    style={{
-                      transform: `translate3d(calc(-50% + ${130 - p * 150}%), -50%, 0) rotate(${-34 + p * 66}deg)`,
-                    }}
-                  />
-                </div>
-                <div className="p-4">
-                  <p className="font-display text-sm font-semibold">Frame {Math.round(p * 23) + 1}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {["Rest", "Approach", "Wind-up", "Arc", "Contact", "Follow-through"][i]}
-                  </p>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+        <div className="mt-8 max-w-2xl mx-auto animate-rise">
+          <EelSlap />
+          <p className="mt-4 text-center text-sm text-muted-foreground">
+            Interact with the original Eel Slap animation above.
+          </p>
+        </div>
+      </Container>
 
         <h2 className="mt-16 text-2xl font-bold">The assets</h2>
         <div className="mt-6 grid gap-5 md:grid-cols-3">
