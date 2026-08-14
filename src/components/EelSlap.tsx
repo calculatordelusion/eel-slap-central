@@ -17,8 +17,8 @@ export function EelSlap({ className = "" }: Props) {
   const imagesRef = useRef<HTMLImageElement[]>([]);
 
   const totalFrames = 93;
-  const frameWidth = 640;
-  const frameHeight = 480;
+  const frameWidth = 320;
+  const frameHeight = 240;
 
   const frameMap = [24, 23, 24, 23];
 
@@ -89,6 +89,10 @@ export function EelSlap({ className = "" }: Props) {
           const images = imagesRef.current;
           const img = images[imageIndex];
           if (img && img.complete && img.naturalWidth > 0) {
+            // Fill the background to avoid ghosting/doubling
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, frameWidth, frameHeight);
+            
             ctx.drawImage(
               img,
               frameInImage * frameWidth, 0, frameWidth, frameHeight,
@@ -130,8 +134,8 @@ export function EelSlap({ className = "" }: Props) {
     }
 
     const relativeX = clientX - rect.left;
-    const scaledX = (relativeX / rect.width) * frameWidth;
-    targetPosition.current = frameWidth - Math.max(0, Math.min(frameWidth, scaledX));
+    const scaledX = (relativeX / rect.width) * 320;
+    targetPosition.current = 320 - Math.max(0, Math.min(320, scaledX));
   };
 
   return (
