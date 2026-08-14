@@ -1,7 +1,5 @@
 import React from "react";
 
-const FRAMES = 24;
-
 type Props = {
   className?: string;
   /** Show the slap counter and helper text */
