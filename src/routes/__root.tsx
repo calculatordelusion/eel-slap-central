@@ -89,6 +89,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "Eel Slap Archive" },
       { name: "theme-color", content: "#0b1729" },
+      { name: "google-site-verification", content: "google2c7d897443d38cf6" },
       { property: "og:site_name", content: "Eel Slap Archive" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
