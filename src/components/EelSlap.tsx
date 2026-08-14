@@ -1,6 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import portrait from "@/assets/slap-portrait.jpg";
-import eelImg from "@/assets/eel.png";
+import React from "react";
 
 const FRAMES = 24;
 
