@@ -128,11 +128,8 @@ function Home() {
             </dl>
           </div>
 
-          <div className="animate-rise" style={{ animationDelay: "120ms" }}>
-            <EelSlap />
-            <p className="mt-4 text-center text-sm text-muted-foreground">
-              Interact with the original Eel Slap animation above.
-            </p>
+          <div className="animate-rise flex justify-center" style={{ animationDelay: "120ms" }}>
+            <EelSlap className="max-w-[800px]" />
           </div>
         </Container>
       </section>
