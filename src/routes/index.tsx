@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Container, RelatedLinks } from "@/components/site/Page";
 import { FAQS, POSTS } from "@/lib/site";
 
-const title = "Eel Slap — Play the Classic Eel Slap Animation & Learn Its Story";
+const title = "Eel Slap — The Original Eel Slap Game & Meme Archive";
 const description =
-  "Play the legendary Eel Slap animation, then discover where it came from: its 2011 origin, how the cursor-driven frames work, meme history, fun facts and answers to every common question.";
+  "Experience the original Eel Slap game. Move your mouse to slap with an eel. Discover the history, the man behind the meme, and why this 2011 classic is still the internet's most satisfying browser toy.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
