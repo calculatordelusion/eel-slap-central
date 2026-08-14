@@ -64,7 +64,8 @@ export function EelSlap({ className = "" }: Props) {
       currentPosition.current += (targetPosition.current - currentPosition.current) / 4;
       
       const canvas = canvasRef.current;
-      if (canvas && isReady) {
+      const ready = isReady;
+      if (canvas && ready) {
         const ctx = canvas.getContext('2d', { alpha: false });
         if (ctx) {
           const currentFrameIndex = Math.min(totalFrames - 1, Math.max(0, Math.round((currentPosition.current / frameWidth) * (totalFrames - 1))));
@@ -82,7 +83,8 @@ export function EelSlap({ className = "" }: Props) {
             cumulativeFrames += frameMap[i];
           }
 
-          const img = imagesRef.current[imageIndex];
+          const images = imagesRef.current;
+          const img = images[imageIndex];
           if (img && img.complete && img.naturalWidth > 0) {
             ctx.drawImage(
               img,
