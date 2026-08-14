@@ -132,7 +132,7 @@ const THEME_SCRIPT = `(function(){try{var s=localStorage.getItem('eelslap-theme'
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
         <HeadContent />
