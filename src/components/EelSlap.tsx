@@ -58,8 +58,9 @@ export function EelSlap({ className = "" }: Props) {
     
     if ('touches' in e) {
       const touchEvent = e as React.TouchEvent;
-      if (touchEvent.touches && touchEvent.touches.length > 0) {
-        clientX = touchEvent.touches[0].clientX;
+      const touches = touchEvent.touches;
+      if (touches && touches.length > 0) {
+        clientX = touches[0].clientX;
       } else {
         return;
       }
