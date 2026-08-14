@@ -17,7 +17,7 @@ export const Route = createFileRoute("/gallery")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/gallery" },
+      { property: "og:url", content: "https://eelslap.net/gallery" },
     ],
     links: [{ rel: "canonical", href: "/gallery" }],
   }),
