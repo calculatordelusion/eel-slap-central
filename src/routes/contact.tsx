@@ -7,9 +7,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Container, PageHeader, RelatedLinks } from "@/components/site/Page";
 
-const title = "Contact the Eel Slap Archive — Corrections, Tips and Questions";
+const title = "Contact Eel Slap — Corrections, Tips and Questions";
 const description =
-  "Get in touch with the Eel Slap Archive editorial team. Send a correction, suggest an article, report a broken link or ask a question about the site.";
+  "Get in touch with the Eel Slap editorial team. Send a correction, suggest an article, report a broken link or ask a question about the site.";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: "https://eelslap.net/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
   }),
