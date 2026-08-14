@@ -14,7 +14,7 @@ export const Route = createFileRoute("/privacy")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/privacy" },
+      { property: "og:url", content: "https://eelslap.net/privacy" },
     ],
     links: [{ rel: "canonical", href: "/privacy" }],
   }),
