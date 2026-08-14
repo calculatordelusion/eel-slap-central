@@ -12,7 +12,7 @@ export const NAV: { label: string; items: NavItem[] }[] = [
   {
     label: "Explore",
     items: [
-      { label: "Play Eel Slap", to: "/play", description: "The interactive slap, rebuilt for modern browsers" },
+      { label: "Play Eel Slap", to: "/", description: "The interactive slap, rebuilt for modern browsers" },
       { label: "What is Eel Slap?", to: "/about", description: "A plain-language definition and quick answers" },
       { label: "How it works", to: "/how-it-works", description: "Frame sequences, cursor tracking and preloading" },
       { label: "Gallery", to: "/gallery", description: "Frames, interface details and visual anatomy" },

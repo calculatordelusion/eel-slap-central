@@ -125,7 +125,7 @@ function About() {
         <RelatedLinks
           links={[
             { label: "History", to: "/history", description: "The 2011 origin and everything after it." },
-            { label: "Play Eel Slap", to: "/play", description: "Try the interaction for yourself." },
+            { label: "Play Eel Slap", to: "/", description: "Try the interaction for yourself." },
             { label: "Fun facts", to: "/fun-facts", description: "Trivia most people never learn." },
           ]}
         />

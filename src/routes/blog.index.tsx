@@ -107,7 +107,7 @@ function BlogIndex() {
           links={[
             { label: "Resources", to: "/resources", description: "Sources and further reading." },
             { label: "Editorial policy", to: "/editorial-policy", description: "How these articles are researched." },
-            { label: "Play Eel Slap", to: "/play", description: "Take a break and slap something." },
+            { label: "Play Eel Slap", to: "/", description: "Take a break and slap something." },
           ]}
         />
       </Container>

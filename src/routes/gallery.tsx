@@ -78,7 +78,7 @@ function Gallery() {
         <RelatedLinks
           links={[
             { label: "How it works", to: "/how-it-works", description: "What connects these frames technically." },
-            { label: "Play Eel Slap", to: "/play", description: "See them in motion." },
+            { label: "Play Eel Slap", to: "/", description: "See them in motion." },
             { label: "Fun facts", to: "/fun-facts", description: "Why the eel is photographed, not drawn." },
           ]}
         />

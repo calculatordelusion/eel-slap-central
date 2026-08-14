@@ -141,7 +141,7 @@ function HowItWorks() {
               to: "/blog/preloading-images-for-instant-interaction",
               description: "A deeper engineering write-up.",
             },
-            { label: "Play Eel Slap", to: "/play", description: "The full-size version." },
+            { label: "Play Eel Slap", to: "/", description: "The full-size version." },
             { label: "Gallery", to: "/gallery", description: "See the frames laid out." },
           ]}
         />

@@ -46,8 +46,8 @@ const FEATURES = [
     icon: Waves,
     title: "The slap, rebuilt",
     body: "The original legendary interaction: simple, effective, and preserved exactly as it was first published.",
-    to: "/play",
-    cta: "Open the full-screen slap",
+    to: "/",
+    cta: "Start the slap",
   },
   {
     icon: Clock,
@@ -108,7 +108,7 @@ function Home() {
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Button asChild size="lg" className="bg-gradient-primary rounded-full px-7 font-semibold shadow-glow">
-                <Link to="/play">Play Eel Slap</Link>
+                <Link to="/">Play Eel Slap</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="rounded-full px-7 font-semibold">
                 <Link to="/history">Learn the story</Link>
