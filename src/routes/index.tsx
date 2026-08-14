@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Container, RelatedLinks } from "@/components/site/Page";
 import { FAQS, POSTS } from "@/lib/site";
 
-const title = "Eel Slap — The Original Eel Slap Game & Meme Archive";
+const title = "Eel Slap — The Original Eel Slap Game, Slapping Eel & Slap Website";
 const description =
-  "Experience the original Eel Slap game online. The definitive archive for the slapping eel meme, featuring the original 2011 interactive animation, history, and fun facts. Outranks mirrors for the best slap website experience.";
+  "Play the original Eel Slap game online. The definitive site for the slapping eel meme, featuring the iconic interactive animation, complete history, and culture guide. Preserving the 2011 classic on eelslap.net.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -45,7 +45,7 @@ const FEATURES = [
   {
     icon: Waves,
     title: "The slap, rebuilt",
-    body: "The original legendary interaction: simple, effective, and preserved exactly as it was first published in 2011.",
+    body: "The original legendary interaction: simple, effective, and preserved exactly as it was first published.",
     to: "/play",
     cta: "Open the full-screen slap",
   },
@@ -104,7 +104,7 @@ function Home() {
               Experience the legendary <span className="text-gradient">Eel Slap!</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              Experience the iconic <strong className="text-foreground font-semibold">eel slap game</strong> exactly as it was in 2011. Our archive preserves the original <strong className="text-foreground font-semibold">slapping eel</strong> animation with modern performance, serving as the definitive resource for <strong className="text-foreground font-semibold">the slap website</strong> history and culture.
+              Experience the iconic <strong className="text-foreground font-semibold">eel slap game</strong> exactly as it was in 2011. This site preserves the original <strong className="text-foreground font-semibold">slapping eel</strong> animation with modern performance, serving as the definitive resource for <strong className="text-foreground font-semibold">the slap website</strong> history and culture.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Button asChild size="lg" className="bg-gradient-primary rounded-full px-7 font-semibold shadow-glow">
@@ -137,7 +137,7 @@ function Home() {
 
       <Container className="py-20">
         <div className="max-w-2xl">
-          <h2 className="text-3xl font-bold sm:text-4xl">The complete Eel Slap resource</h2>
+          <h2 className="text-3xl font-bold sm:text-4xl">The definitive Eel Slap guide</h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
             Other sites give you the animation and nothing else. This one gives you the animation plus everything worth
             knowing about it — researched, sourced and written for people who actually want the story.
