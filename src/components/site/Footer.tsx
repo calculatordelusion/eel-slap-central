@@ -18,7 +18,7 @@ export function Footer() {
               <span className="bg-gradient-primary grid h-9 w-9 place-items-center rounded-xl">
                 <span aria-hidden="true">🐟</span>
               </span>
-              <span className="font-display text-lg font-bold">Eel Slap</span>
+              <span className="font-display text-lg font-bold">'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            use the same script as on compitor website and embded it on our website</span>
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
               An independent, ad-free archive documenting the Eel Slap phenomenon: the interactive animation, its
