@@ -43,7 +43,7 @@ const FEATURES = [
   {
     icon: Waves,
     title: "The slap, rebuilt",
-    body: "A modern, pointer-driven recreation of the original interaction: every frame preloaded, nothing to install, smooth on phones and desktops alike.",
+    body: "The original legendary interaction: simple, effective, and preserved exactly as it was first published in 2011.",
     to: "/play",
     cta: "Open the full-screen slap",
   },

@@ -95,8 +95,7 @@ function Play() {
           </p>
           <h2>Is it free?</h2>
           <p>
-            Yes. There is no account, no paywall, no download and no tracking of your play session. The slap counter
-            lives in your browser tab and disappears when you close it.
+            Yes. There is no account, no paywall, no download and no tracking of your play session. It is a piece of internet history preserved for free.
           </p>
         </section>
 
