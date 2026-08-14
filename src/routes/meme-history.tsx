@@ -82,7 +82,7 @@ function MemeHistory() {
             <p className="text-muted-foreground">
               Eel Slap comes from the 2007–2013 window when jokes were shared as unexplained links and could be
               interactive. Feeds later favoured content that plays itself, which ended the format — but the pages built
-              from plain files, including this one, are still online.
+              from plain files are still online.
             </p>
           </QuickAnswer>
           <SectionRenderer sections={SECTIONS} />
