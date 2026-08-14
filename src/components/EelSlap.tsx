@@ -15,7 +15,7 @@ export function EelSlap({ className = "", chrome = true }: Props) {
   return (
     <div className={`relative aspect-square w-full overflow-hidden rounded-3xl border border-border bg-black shadow-glow ${className}`}>
       <iframe
-        src="http://eelslap.com/"
+        src="https://eelslap.com/"
         title="Original Eel Slap"
         className="absolute inset-0 h-full w-full border-0"
         allow="autoplay; fullscreen"
