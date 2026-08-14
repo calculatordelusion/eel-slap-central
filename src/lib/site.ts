@@ -464,50 +464,6 @@ export const POSTS: Post[] = [
       },
     ],
   },
-  {
-    slug: "nostalgia-web-design-lessons",
-    title: "What Nostalgia Sites Teach Us About Good Design",
-    description:
-      "Retro web pages are not popular because they were better built. They are popular because of three qualities modern sites keep discarding.",
-    category: "Design",
-    date: "2025-07-16",
-    updated: "2026-08-14",
-    minutes: 7,
-    body: [
-      {
-        paragraphs: [
-          "It is easy to romanticise the old web. Much of it was slow, inaccessible and broken outside one browser. But the pages people still visit for pleasure share three qualities that modern sites routinely trade away.",
-        ],
-      },
-      {
-        heading: "1. The page is the product",
-        paragraphs: [
-          "No interstitial, no consent theatre stacked on a paywall stacked on a newsletter prompt. You land on the thing you came for. Every layer between arrival and payoff is a tax that compounds.",
-        ],
-      },
-      {
-        heading: "2. Personality over consistency",
-        paragraphs: [
-          "Old pages looked like someone made them. Present-day design systems buy consistency with sameness, and sameness is forgettable. A single deliberate oddity — a strange colour, an unnecessary animation, a joke in the footer — is what people remember and describe to others.",
-        ],
-      },
-      {
-        heading: "3. Finished, not maintained",
-        paragraphs: [
-          "A page can be done. Static content that never changes needs no roadmap and no migrations, and it is still there in ten years. Treating some work as finished rather than perpetually iterated is a legitimate design choice.",
-        ],
-      },
-      {
-        heading: "What not to copy",
-        bullets: [
-          "Fixed-width layouts that break on phones.",
-          "Text baked into images, invisible to search and screen readers.",
-          "Autoplaying audio with no control.",
-          "Contrast chosen for vibes rather than legibility.",
-        ],
-      },
-    ],
-  },
 ];
 
 export function getPost(slug: string) {
