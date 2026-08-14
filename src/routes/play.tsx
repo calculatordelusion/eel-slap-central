@@ -53,9 +53,7 @@ function Play() {
           <div className="space-y-6">
             <QuickAnswer label="How to play">
               <p className="text-muted-foreground">
-                Drag your cursor horizontally over the image. Each position maps to one of 24 frames, so you control the
-                speed and timing of the slap. On a phone, swipe. With a keyboard, focus the image and use the left and
-                right arrow keys, or Home and End to jump to either extreme.
+                Drag your cursor horizontally over the embedded window. The timing of the slap is controlled by your mouse position. On a touch device, swipe across the window to initiate the animation.
               </p>
             </QuickAnswer>
 
@@ -65,8 +63,7 @@ function Play() {
                 {[
                   ["Mouse", "Move left and right over the frame"],
                   ["Touch", "Swipe across the image"],
-                  ["Arrow keys", "Step one frame at a time"],
-                  ["Home / End", "Jump to the first or last frame"],
+                  ["Original Controls", "Move horizontally inside the window"],
                 ].map(([k, v]) => (
                   <div key={k} className="flex justify-between gap-4 border-b border-border pb-2.5 last:border-0">
                     <dt className="font-medium">{k}</dt>
@@ -91,19 +88,14 @@ function Play() {
         <section className="prose-eel mt-16 max-w-3xl">
           <h2>Why this version exists</h2>
           <p>
-            The original Eel Slap is a piece of web history and worth visiting on its own terms. This recreation exists
-            so that the interaction sits next to the documentation: you can try the mechanic, then immediately read how
-            it was built and where it came from without leaving the page.
+            The original Eel Slap is a piece of web history. We have embedded it here directly so you can experience the authentic 2011 interaction as it was intended, alongside our comprehensive documentation and history.
           </p>
           <p>
-            It also fixes a few things that the 2011 web could not. Our version supports touch and keyboard input,
-            announces its state to screen readers, respects reduced-motion settings, and preloads every frame before
-            enabling interaction so the first slap is as smooth as the hundredth.
+            Our site serves as a definitive archive, preserving the legacy of this browser toy while providing the context, technical breakdowns, and cultural history that the original site leaves to the imagination.
           </p>
           <h2>Is it free?</h2>
           <p>
-            Yes. There is no account, no paywall, no download and no tracking of your play session. The slap counter
-            lives in your browser tab and disappears when you close it.
+            Yes. There is no account, no paywall, no download and no tracking of your play session. It is a piece of internet history preserved for free.
           </p>
         </section>
 
