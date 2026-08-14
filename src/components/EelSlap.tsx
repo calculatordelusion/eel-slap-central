@@ -134,8 +134,8 @@ export function EelSlap({ className = "" }: Props) {
     }
 
     const relativeX = clientX - rect.left;
-    const scaledX = (relativeX / rect.width) * frameWidth;
-    targetPosition.current = frameWidth - Math.max(0, Math.min(frameWidth, scaledX));
+    const scaledX = (relativeX / rect.width) * 320;
+    targetPosition.current = 320 - Math.max(0, Math.min(320, scaledX));
   };
 
   return (
