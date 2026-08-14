@@ -18,6 +18,11 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
+# Directives for BingBot to resolve potential crawl delays
+User-agent: bingbot
+Allow: /
+Crawl-delay: 1
+
 # Prevent crawl waste on low-value pages
 Disallow: /api/
 Disallow: /_authenticated/
