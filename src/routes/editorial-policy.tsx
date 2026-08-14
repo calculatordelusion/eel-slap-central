@@ -4,7 +4,7 @@ import type { Section } from "@/lib/site";
 
 const title = "Editorial & Fact-Checking Policy — Eel Slap";
 const description =
-  "How the Eel Slap Archive researches, writes, reviews and corrects its content, including our sourcing standards, update schedule and independence statement.";
+  "How Eel Slap researches, writes, reviews and corrects its content, including our sourcing standards, update schedule and independence statement.";
 
 export const Route = createFileRoute("/editorial-policy")({
   head: () => ({
@@ -25,7 +25,7 @@ const SECTIONS: Section[] = [
   {
     heading: "Who writes this site",
     paragraphs: [
-      "The Eel Slap Archive is an independent project run by a small editorial team with backgrounds in web development and internet history. We are not affiliated with eelslap.com, eelslap.org or any other legacy mirror of the original site.",
+      "Eel Slap is an independent project run by a small editorial team with backgrounds in web development and internet history. We are not affiliated with eelslap.com, eelslap.org or any other legacy mirror of the original site.",
     ],
   },
   {

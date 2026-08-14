@@ -4,7 +4,7 @@ import type { Section } from "@/lib/site";
 
 const title = "Privacy Policy — Eel Slap";
 const description =
-  "How the Eel Slap Archive handles personal data: what we collect, why, how long we keep it, and the rights you have over it.";
+  "How Eel Slap handles personal data: what we collect, why, how long we keep it, and the rights you have over it.";
 
 export const Route = createFileRoute("/privacy")({
   head: () => ({
