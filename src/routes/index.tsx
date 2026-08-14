@@ -8,7 +8,7 @@ import { FAQS, POSTS } from "@/lib/site";
 
 const title = "Eel Slap — The Original Eel Slap Game & Meme Archive";
 const description =
-  "Experience the original Eel Slap game. Move your mouse to slap with an eel. Discover the history, the man behind the meme, and why this 2011 classic is still the internet's most satisfying browser toy.";
+  "Experience the original Eel Slap game online. The definitive archive for the slapping eel meme, featuring the original 2011 interactive animation, history, and fun facts. Outranks mirrors for the best slap website experience.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
