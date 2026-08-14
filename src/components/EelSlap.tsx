@@ -17,8 +17,8 @@ export function EelSlap({ className = "" }: Props) {
   const imagesRef = useRef<HTMLImageElement[]>([]);
 
   const totalFrames = 93;
-  const frameWidth = 320;
-  const frameHeight = 240;
+  const sourceFrameWidth = 320;
+  const sourceFrameHeight = 240;
 
   const frameMap = [24, 23, 24, 23];
 
@@ -59,16 +59,24 @@ export function EelSlap({ className = "" }: Props) {
 
   useEffect(() => {
     let animationFrameId: number;
+    let lastTime = performance.now();
 
-    const render = () => {
-      currentPosition.current += (targetPosition.current - currentPosition.current) / 4;
+    const render = (time: number) => {
+      const deltaTime = time - lastTime;
+      lastTime = time;
+
+      // Original eelslap.com feels very snappy. 
+      // Using a factor of 0.2-0.3 for a more responsive follow.
+      // currentPosition += (targetPosition - currentPosition) * factor
+      const lerpFactor = 0.25; 
+      currentPosition.current += (targetPosition.current - currentPosition.current) * lerpFactor;
       
       const canvas = canvasRef.current;
       const ready = isReady;
       if (canvas && ready) {
         const ctx = canvas.getContext('2d', { alpha: false });
         if (ctx) {
-          const currentFrameIndex = Math.min(totalFrames - 1, Math.max(0, Math.round((currentPosition.current / frameWidth) * (totalFrames - 1))));
+          const currentFrameIndex = Math.min(totalFrames - 1, Math.max(0, Math.round((currentPosition.current / sourceFrameWidth) * (totalFrames - 1))));
           
           let cumulativeFrames = 0;
           let imageIndex = 0;
@@ -89,14 +97,11 @@ export function EelSlap({ className = "" }: Props) {
           const images = imagesRef.current;
           const img = images[imageIndex];
           if (img && img.complete && img.naturalWidth > 0) {
-            // Fill the background to avoid ghosting/doubling
-            ctx.fillStyle = '#000';
-            ctx.fillRect(0, 0, frameWidth, frameHeight);
-            
+            // Draw into the full canvas size
             ctx.drawImage(
               img,
-              frameInImage * frameWidth, 0, frameWidth, frameHeight,
-              0, 0, frameWidth, frameHeight
+              frameInImage * sourceFrameWidth, 0, sourceFrameWidth, sourceFrameHeight,
+              0, 0, canvas.width, canvas.height
             );
           }
         }
@@ -105,7 +110,7 @@ export function EelSlap({ className = "" }: Props) {
       animationFrameId = requestAnimationFrame(render);
     };
 
-    render();
+    animationFrameId = requestAnimationFrame(render);
     return () => cancelAnimationFrame(animationFrameId);
   }, [isReady]);
 
@@ -134,13 +139,13 @@ export function EelSlap({ className = "" }: Props) {
     }
 
     const relativeX = clientX - rect.left;
-    const scaledX = (relativeX / rect.width) * 320;
-    targetPosition.current = 320 - Math.max(0, Math.min(320, scaledX));
+    const scaledX = (relativeX / rect.width) * sourceFrameWidth;
+    targetPosition.current = sourceFrameWidth - Math.max(0, Math.min(sourceFrameWidth, scaledX));
   };
 
   return (
     <div 
-      className={`relative aspect-[4/3] w-full max-w-[640px] mx-auto overflow-hidden bg-black shadow-2xl rounded-xl border border-white/10 ${className}`}
+      className={`relative aspect-[4/3] w-full max-w-[800px] mx-auto overflow-hidden bg-black shadow-2xl rounded-xl border border-white/10 ${className}`}
       ref={containerRef}
       onMouseMove={handlePointerMove}
       onTouchMove={handlePointerMove}
@@ -160,9 +165,9 @@ export function EelSlap({ className = "" }: Props) {
 
       <canvas 
         ref={canvasRef}
-        width={frameWidth}
-        height={frameHeight}
-        className="w-full h-full object-contain transition-opacity duration-500"
+        width={sourceFrameWidth * 2}
+        height={sourceFrameHeight * 2}
+        className="w-full h-full object-contain transition-opacity duration-300"
         style={{ opacity: isReady ? 1 : 0 }}
       />
     </div>
