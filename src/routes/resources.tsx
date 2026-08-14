@@ -84,7 +84,7 @@ function Resources() {
       <PageHeader
         eyebrow="Resources"
         title="Sources and further reading"
-        intro="Everything we consulted, plus the places to go if you want to research early-web culture yourself. External links open on their own sites and are not affiliated with this archive."
+        intro="Everything we consulted, plus the places to go if you want to research early-web culture yourself. External links open on their own sites and are not affiliated with this project."
         trail={[{ label: "Resources" }]}
       />
       <Container className="py-14">
