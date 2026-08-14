@@ -29,6 +29,8 @@ export const Route = createFileRoute("/faq")({
             name: f.q,
             acceptedAnswer: { "@type": "Answer", text: f.a },
           })),
+          author: { "@type": "Organization", name: "Eel Slap" },
+          publisher: { "@type": "Organization", name: "Eel Slap" },
         }),
       },
     ],
