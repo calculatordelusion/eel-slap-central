@@ -15,12 +15,12 @@ export const Route = createFileRoute("/blog/$slug")({
     const { post } = loaderData;
     return {
       meta: [
-        { title: `${post.title} — Eel Slap Game Archive` },
+        { title: `${post.title} — Eel Slap` },
         { name: "description", content: post.description },
         { property: "og:title", content: post.title },
         { property: "og:description", content: post.description },
         { property: "og:type", content: "article" },
-        { property: "og:url", content: `/blog/${params.slug}` },
+        { property: "og:url", content: `https://eelslap.net/blog/${params.slug}` },
       ],
       links: [{ rel: "canonical", href: `https://eelslap.net/blog/${params.slug}` }],
       scripts: [
@@ -36,7 +36,7 @@ export const Route = createFileRoute("/blog/$slug")({
             articleSection: post.category,
             author: { "@type": "Organization", name: "Eel Slap" },
             publisher: { "@type": "Organization", name: "Eel Slap" },
-            mainEntityOfPage: `/blog/${params.slug}`,
+            mainEntityOfPage: `https://eelslap.net/blog/${params.slug}`,
           }),
         },
       ],
