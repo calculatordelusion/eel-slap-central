@@ -16,7 +16,7 @@ export const Route = createFileRoute("/cookies")({
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://eelslap.net/cookies" },
     ],
-    links: [{ rel: "canonical", href: "/cookies" }],
+    links: [{ rel: "canonical", href: "https://eelslap.net/cookies" }],
   }),
   component: Cookies,
 });

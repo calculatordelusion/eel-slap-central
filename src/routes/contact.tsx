@@ -21,7 +21,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://eelslap.net/contact" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: "https://eelslap.net/contact" }],
   }),
   component: Contact,
 });

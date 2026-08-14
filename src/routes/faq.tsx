@@ -17,7 +17,7 @@ export const Route = createFileRoute("/faq")({
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://eelslap.net/faq" },
     ],
-    links: [{ rel: "canonical", href: "/faq" }],
+    links: [{ rel: "canonical", href: "https://eelslap.net/faq" }],
     scripts: [
       {
         type: "application/ld+json",

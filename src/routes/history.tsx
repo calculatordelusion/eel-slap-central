@@ -16,7 +16,7 @@ export const Route = createFileRoute("/history")({
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://eelslap.net/history" },
     ],
-    links: [{ rel: "canonical", href: "/history" }],
+    links: [{ rel: "canonical", href: "https://eelslap.net/history" }],
     scripts: [
       {
         type: "application/ld+json",

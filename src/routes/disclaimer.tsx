@@ -16,7 +16,7 @@ export const Route = createFileRoute("/disclaimer")({
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://eelslap.net/disclaimer" },
     ],
-    links: [{ rel: "canonical", href: "/disclaimer" }],
+    links: [{ rel: "canonical", href: "https://eelslap.net/disclaimer" }],
   }),
   component: Disclaimer,
 });

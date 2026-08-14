@@ -16,7 +16,7 @@ export const Route = createFileRoute("/editorial-policy")({
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://eelslap.net/editorial-policy" },
     ],
-    links: [{ rel: "canonical", href: "/editorial-policy" }],
+    links: [{ rel: "canonical", href: "https://eelslap.net/editorial-policy" }],
   }),
   component: EditorialPolicy,
 });

@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
       { property: "og:image", content: "https://eelslap.net/social-share.png" },
       { name: "twitter:image", content: "https://eelslap.net/social-share.png" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://eelslap.net/" }],
     scripts: [
       {
         type: "application/ld+json",

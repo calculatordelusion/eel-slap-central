@@ -16,7 +16,7 @@ export const Route = createFileRoute("/meme-history")({
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://eelslap.net/meme-history" },
     ],
-    links: [{ rel: "canonical", href: "/meme-history" }],
+    links: [{ rel: "canonical", href: "https://eelslap.net/meme-history" }],
   }),
   component: MemeHistory,
 });

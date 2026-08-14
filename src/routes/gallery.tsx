@@ -19,7 +19,7 @@ export const Route = createFileRoute("/gallery")({
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://eelslap.net/gallery" },
     ],
-    links: [{ rel: "canonical", href: "/gallery" }],
+    links: [{ rel: "canonical", href: "https://eelslap.net/gallery" }],
   }),
   component: Gallery,
 });

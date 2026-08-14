@@ -16,7 +16,7 @@ export const Route = createFileRoute("/sitemap")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://eelslap.net/sitemap" },
     ],
-    links: [{ rel: "canonical", href: "/sitemap" }],
+    links: [{ rel: "canonical", href: "https://eelslap.net/sitemap" }],
   }),
   component: Sitemap,
 });

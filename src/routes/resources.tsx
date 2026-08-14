@@ -15,7 +15,7 @@ export const Route = createFileRoute("/resources")({
       { property: "og:type", content: "article" },
       { property: "og:url", content: "https://eelslap.net/resources" },
     ],
-    links: [{ rel: "canonical", href: "/resources" }],
+    links: [{ rel: "canonical", href: "https://eelslap.net/resources" }],
   }),
   component: Resources,
 });

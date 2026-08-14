@@ -22,7 +22,7 @@ export const Route = createFileRoute("/blog/$slug")({
         { property: "og:type", content: "article" },
         { property: "og:url", content: `/blog/${params.slug}` },
       ],
-      links: [{ rel: "canonical", href: `/blog/${params.slug}` }],
+      links: [{ rel: "canonical", href: `https://eelslap.net/blog/${params.slug}` }],
       scripts: [
         {
           type: "application/ld+json",
