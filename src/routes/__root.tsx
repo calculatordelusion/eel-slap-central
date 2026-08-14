@@ -90,6 +90,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Eel Slap" },
       { name: "theme-color", content: "#0b1729" },
       { name: "google-site-verification", content: "google2c7d897443d38cf6" },
+      { name: "msvalidate.01", content: "869CFB7DD82BE4A0EE2B6F299DB5EE5F" },
       { property: "og:site_name", content: "Eel Slap" },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "https://eelslap.net/social-share.png" },
