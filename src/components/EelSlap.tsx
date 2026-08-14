@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 type Props = {
   className?: string;
+  chrome?: boolean;
 };
 
 export function EelSlap({ className = "" }: Props) {
@@ -23,7 +24,8 @@ export function EelSlap({ className = "" }: Props) {
         const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
         if (isTouch) {
           setShowIntro(true);
-          setTimeout(() => setShowIntro(false), 4000);
+          const hideTimer = setTimeout(() => setShowIntro(false), 4000);
+          return () => clearTimeout(hideTimer);
         }
       }, 500);
       return () => clearTimeout(timer);
@@ -55,7 +57,7 @@ export function EelSlap({ className = "" }: Props) {
     if ('touches' in e && e.touches.length > 0) {
       clientX = e.touches[0].clientX;
     } else if ('clientX' in e) {
-      clientX = e.clientX;
+      clientX = (e as React.MouseEvent).clientX;
     } else {
       return;
     }
