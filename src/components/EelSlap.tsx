@@ -93,8 +93,8 @@ export function EelSlap({ className = "", chrome = true }: Props) {
 
   const p = frame / (FRAMES - 1);
   // eel travel: starts off to the right, sweeps across the face
-  const eelX = 120 - p * 190;
-  const eelRot = -28 + p * 62;
+  const eelX = 130 - p * 150;
+  const eelRot = -34 + p * 66;
   const eelY = -14 + Math.sin(p * Math.PI) * 10;
   const impact = Math.max(0, (p - 0.62) / 0.38);
   const headRot = -impact * 7;

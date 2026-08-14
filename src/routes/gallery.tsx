@@ -65,7 +65,7 @@ function Gallery() {
                     height={576}
                     className="absolute left-1/2 top-1/2 w-[125%] max-w-none"
                     style={{
-                      transform: `translate3d(calc(-50% + ${120 - p * 190}%), -50%, 0) rotate(${-28 + p * 62}deg)`,
+                      transform: `translate3d(calc(-50% + ${130 - p * 150}%), -50%, 0) rotate(${-34 + p * 66}deg)`,
                     }}
                   />
                 </div>
