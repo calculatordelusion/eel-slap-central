@@ -127,7 +127,12 @@ export function EelSlap({ className = "", fullPage = false }: Props & { fullPage
         const touchEvent = e as TouchEvent;
         const touches = touchEvent.touches;
         if (touches && touches.length > 0) {
-          clientX = touches[0].clientX;
+          const touch = touches[0];
+          if (touch) {
+            clientX = touch.clientX;
+          } else {
+            return;
+          }
         } else {
           return;
         }
