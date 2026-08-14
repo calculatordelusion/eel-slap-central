@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AuthorBox, Container, PageHeader, QuickAnswer, RelatedLinks, SectionRenderer } from "@/components/site/Page";
 import type { Section } from "@/lib/site";
 
-const title = "The History of Eel Slap — Origin, Timeline and Legacy";
+const title = "History of Eel Slap — The Original 2011 Meme Website";
 const description =
-  "How Eel Slap started in 2011, why a one-joke website spread without explanation, how it survived the death of Flash, and the revivals that keep bringing it back.";
+  "Discover the origin of the Eel Slap meme. From its 2011 launch on eelslap.com to its status as a legendary 'slapping with a fish' browser toy that survived the death of Flash.";
 
 export const Route = createFileRoute("/history")({
   head: () => ({

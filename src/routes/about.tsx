@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AuthorBox, Container, PageHeader, QuickAnswer, RelatedLinks, SectionRenderer } from "@/components/site/Page";
 import type { Section } from "@/lib/site";
 
-const title = "What Is Eel Slap? The Meme, the Site and the Slap Explained";
+const title = "What Is Eel Slap? The Viral Slapping Eel Website Explained";
 const description =
-  "A clear definition of Eel Slap: what the site does, why it counts as a browser toy rather than a game, who is being slapped, and why the joke has lasted since 2011.";
+  "Everything you need to know about the Eel Slap website. Learn who the guy is, if the slapping eel is real, and how this iconic internet meme became a viral sensation in 2011.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({

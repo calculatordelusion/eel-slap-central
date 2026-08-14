@@ -60,32 +60,32 @@ export const FAQS: Faq[] = [
     a: "Eel Slap is a single-serving website where moving your mouse left and right swings a live eel into the face of a calm-looking man. It is a browser toy, not a game you can win: there is no score, no timer and no goal beyond the slap itself.",
   },
   {
-    q: "Is Eel Slap a game or a meme?",
-    a: "Both, loosely. It behaves like an interactive toy, but it spread the way memes do — shared as a link with no explanation, repeated in forums and group chats, and referenced years after people first saw it.",
+    q: "Is Eel Slap safe to play?",
+    a: "Yes, Eel Slap is broadly safe and harmless. It contains no gore, no offensive language, and requires no user accounts or personal data. It is a piece of slapstick humor using a fish, similar to a digital flipbook.",
   },
   {
-    q: "How do you play Eel Slap?",
-    a: "Move your cursor horizontally across the image. Each horizontal position maps to one frame of a photo sequence, so dragging fast produces a rapid slap and dragging slowly produces a slow-motion wind-up. On touch screens you swipe instead.",
+    q: "Who is the man in the Eel Slap video?",
+    a: "The man is a model who posed specifically for the frame sequence. He is intentionally anonymous to keep the joke focused on the absurdity of the situation rather than a specific person. His calm expression is a key part of the meme's humor.",
+  },
+  {
+    q: "What is the name of the fish in Eel Slap?",
+    a: "The fish used in the original animation is a real eel. Its physical weight and texture are what make the animation look so convincing and satisfying when it 'lands' on the target's face.",
+  },
+  {
+    q: "How do you play Eel Slap on mobile?",
+    a: "On mobile devices and touch screens, you simply drag your finger horizontally across the image. The animation will follow your touch position exactly as it would a mouse cursor on a desktop computer.",
   },
   {
     q: "Does Eel Slap still work without Flash?",
-    a: "Yes. Eel Slap never depended on Flash. It works by swapping preloaded still images based on cursor position, which is why it survived the 2020 end of Flash Player while thousands of era-mates went dark.",
+    a: "Yes. Eel Slap never actually used Flash. It was built using a clever sequence of preloaded JPEG images and a small bit of JavaScript, which is why it survived the 2020 'Flash-pocalypse' that killed many other classic browser games.",
   },
   {
-    q: "Who is the man being slapped?",
-    a: "He is a model who posed for the frame sequence rather than a public figure. Deliberate anonymity is part of the joke: a nameless, unbothered face makes the loop feel absurd instead of cruel.",
+    q: "Why is Eel Slap so satisfying?",
+    a: "The satisfaction comes from the immediate, 1:1 response between your hand movement and the eel's motion. This tight feedback loop, combined with the 'wet' visual impact of the eel, creates a unique sensory experience.",
   },
   {
-    q: "Is Eel Slap safe for kids?",
-    a: "It is broadly harmless — no gore, no language, no accounts. It is slapstick with a fish. Parents should still expect the usual open-web caveats about ads and outbound links on third-party mirrors.",
-  },
-  {
-    q: "Is the eel real?",
-    a: "The photographs use a real eel, which is why the motion reads as heavy and wet rather than cartoonish. That physical weight is the main reason the loop stays funny after the surprise wears off.",
-  },
-  {
-    q: "Why do people still play Eel Slap?",
-    a: "Three reasons keep coming up: it loads instantly, it responds to you with zero learning curve, and it is a compact piece of early-2010s web culture that still functions exactly as it did on day one.",
+    q: "What was the original Eel Slap website?",
+    a: "The original Eel Slap was published at eelslap.com in 2011. Since then, several mirrors and archive sites have appeared to preserve the experience, including eelslap.org and this definitive archive.",
   },
 ];
 

@@ -3,9 +3,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { AuthorBox, Container, PageHeader, RelatedLinks } from "@/components/site/Page";
 import { FAQS } from "@/lib/site";
 
-const title = "Eel Slap FAQ — Every Common Question, Answered";
+const title = "Eel Slap FAQ — Is Eel Slap Safe? Who is the Man? & More";
 const description =
-  "Answers to the most asked Eel Slap questions: what it is, how to play, whether it needs Flash, who the man is, whether the eel is real, and why people still play it.";
+  "Find answers to common Eel Slap questions: Is the site safe? Who is the guy being slapped? What is the eel's name? and more about the original fish slap website.";
 
 export const Route = createFileRoute("/faq")({
   head: () => ({
