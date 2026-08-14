@@ -63,8 +63,7 @@ function Play() {
                 {[
                   ["Mouse", "Move left and right over the frame"],
                   ["Touch", "Swipe across the image"],
-                  ["Arrow keys", "Step one frame at a time"],
-                  ["Home / End", "Jump to the first or last frame"],
+                  ["Original Controls", "Move horizontally inside the window"],
                 ].map(([k, v]) => (
                   <div key={k} className="flex justify-between gap-4 border-b border-border pb-2.5 last:border-0">
                     <dt className="font-medium">{k}</dt>
