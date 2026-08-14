@@ -112,7 +112,7 @@ export const POSTS: Post[] = [
     slug: "how-eel-slap-became-an-internet-legend",
     title: "How Eel Slap Became an Internet Legend",
     description:
-      "A look at the design decisions, timing and sharing habits that turned a one-joke website into a link people still send in 2026.",
+      "A look at the design decisions, timing and sharing habits that turned a one-joke website into a link people still send.",
     category: "Eel Slap",
     date: "2026-02-11",
     updated: "2026-08-14",
