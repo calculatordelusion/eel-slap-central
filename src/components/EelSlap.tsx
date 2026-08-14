@@ -158,7 +158,7 @@ export function EelSlap({ className = "" }: Props) {
         ref={canvasRef}
         width={frameWidth}
         height={frameHeight}
-        className="w-full h-full object-cover transition-opacity duration-500"
+        className="w-full h-full object-contain transition-opacity duration-500"
         style={{ opacity: isReady ? 1 : 0 }}
       />
     </div>

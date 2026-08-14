@@ -47,7 +47,6 @@ function Gallery() {
             Interact with the original Eel Slap animation above.
           </p>
         </div>
-      </Container>
 
         <h2 className="mt-16 text-2xl font-bold">The assets</h2>
         <div className="mt-6 grid gap-5 md:grid-cols-3">
@@ -94,7 +93,7 @@ function Gallery() {
           </figure>
         </div>
 
-        <div className="max-w-3xl">
+        <div className="mt-16 max-w-3xl">
           <AuthorBox />
         </div>
 
