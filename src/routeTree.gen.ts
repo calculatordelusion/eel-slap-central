@@ -12,6 +12,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as FunFactsRouteImport } from './routes/fun-facts'
+import { Route as HistoryRouteImport } from './routes/history'
+import { Route as HowItWorksRouteImport } from './routes/how-it-works'
+import { Route as MemeHistoryRouteImport } from './routes/meme-history'
 import { Route as PlayRouteImport } from './routes/play'
 
 const IndexRoute = IndexRouteImport.update({
@@ -29,6 +33,26 @@ const FaqRoute = FaqRouteImport.update({
   path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FunFactsRoute = FunFactsRouteImport.update({
+  id: '/fun-facts',
+  path: '/fun-facts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HistoryRoute = HistoryRouteImport.update({
+  id: '/history',
+  path: '/history',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HowItWorksRoute = HowItWorksRouteImport.update({
+  id: '/how-it-works',
+  path: '/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MemeHistoryRoute = MemeHistoryRouteImport.update({
+  id: '/meme-history',
+  path: '/meme-history',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PlayRoute = PlayRouteImport.update({
   id: '/play',
   path: '/play',
@@ -39,12 +63,20 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/faq': typeof FaqRoute
+  '/fun-facts': typeof FunFactsRoute
+  '/history': typeof HistoryRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/meme-history': typeof MemeHistoryRoute
   '/play': typeof PlayRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/faq': typeof FaqRoute
+  '/fun-facts': typeof FunFactsRoute
+  '/history': typeof HistoryRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/meme-history': typeof MemeHistoryRoute
   '/play': typeof PlayRoute
 }
 export interface FileRoutesById {
@@ -52,20 +84,53 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/faq': typeof FaqRoute
+  '/fun-facts': typeof FunFactsRoute
+  '/history': typeof HistoryRoute
+  '/how-it-works': typeof HowItWorksRoute
+  '/meme-history': typeof MemeHistoryRoute
   '/play': typeof PlayRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/faq' | '/play'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/faq'
+    | '/fun-facts'
+    | '/history'
+    | '/how-it-works'
+    | '/meme-history'
+    | '/play'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/faq' | '/play'
-  id: '__root__' | '/' | '/about' | '/faq' | '/play'
+  to:
+    | '/'
+    | '/about'
+    | '/faq'
+    | '/fun-facts'
+    | '/history'
+    | '/how-it-works'
+    | '/meme-history'
+    | '/play'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/faq'
+    | '/fun-facts'
+    | '/history'
+    | '/how-it-works'
+    | '/meme-history'
+    | '/play'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   FaqRoute: typeof FaqRoute
+  FunFactsRoute: typeof FunFactsRoute
+  HistoryRoute: typeof HistoryRoute
+  HowItWorksRoute: typeof HowItWorksRoute
+  MemeHistoryRoute: typeof MemeHistoryRoute
   PlayRoute: typeof PlayRoute
 }
 
@@ -92,6 +157,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/fun-facts': {
+      id: '/fun-facts'
+      path: '/fun-facts'
+      fullPath: '/fun-facts'
+      preLoaderRoute: typeof FunFactsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/history': {
+      id: '/history'
+      path: '/history'
+      fullPath: '/history'
+      preLoaderRoute: typeof HistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/how-it-works': {
+      id: '/how-it-works'
+      path: '/how-it-works'
+      fullPath: '/how-it-works'
+      preLoaderRoute: typeof HowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/meme-history': {
+      id: '/meme-history'
+      path: '/meme-history'
+      fullPath: '/meme-history'
+      preLoaderRoute: typeof MemeHistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/play': {
       id: '/play'
       path: '/play'
@@ -106,6 +199,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   FaqRoute: FaqRoute,
+  FunFactsRoute: FunFactsRoute,
+  HistoryRoute: HistoryRoute,
+  HowItWorksRoute: HowItWorksRoute,
+  MemeHistoryRoute: MemeHistoryRoute,
   PlayRoute: PlayRoute,
 }
 export const routeTree = rootRouteImport
