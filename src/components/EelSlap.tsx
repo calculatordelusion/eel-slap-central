@@ -20,11 +20,6 @@ export function EelSlap({ className = "" }: Props) {
   const frameWidth = 640;
   const frameHeight = 480;
 
-  // Frame counts per image based on original logic:
-  // image1: 24 frames
-  // image2: 23 frames
-  // image3: 24 frames
-  // image4: 23 frames
   const frameMap = [24, 23, 24, 23];
 
   useEffect(() => {
@@ -66,39 +61,36 @@ export function EelSlap({ className = "" }: Props) {
     let animationFrameId: number;
 
     const render = () => {
-      // Smooth movement
       currentPosition.current += (targetPosition.current - currentPosition.current) / 4;
       
       const canvas = canvasRef.current;
-      const ctx = canvas?.getContext('2d');
-      
-      if (ctx && canvas && isReady) {
-        // Map currentPosition (0-640) to frame (0-92)
-        const currentFrameIndex = Math.min(totalFrames - 1, Math.max(0, Math.round((currentPosition.current / frameWidth) * (totalFrames - 1))));
-        
-        // Find which image contains this frame
-        let cumulativeFrames = 0;
-        let imageIndex = 0;
-        let frameInImage = 0;
+      if (canvas && isReady) {
+        const ctx = canvas.getContext('2d');
+        if (ctx) {
+          const currentFrameIndex = Math.min(totalFrames - 1, Math.max(0, Math.round((currentPosition.current / frameWidth) * (totalFrames - 1))));
+          
+          let cumulativeFrames = 0;
+          let imageIndex = 0;
+          let frameInImage = 0;
 
-        for (let i = 0; i < frameMap.length; i++) {
-          if (currentFrameIndex < cumulativeFrames + frameMap[i]) {
-            imageIndex = i;
-            frameInImage = currentFrameIndex - cumulativeFrames;
-            break;
+          for (let i = 0; i < frameMap.length; i++) {
+            if (currentFrameIndex < cumulativeFrames + frameMap[i]) {
+              imageIndex = i;
+              frameInImage = currentFrameIndex - cumulativeFrames;
+              break;
+            }
+            cumulativeFrames += frameMap[i];
           }
-          cumulativeFrames += frameMap[i];
-        }
 
-        const img = imagesRef.current[imageIndex];
-        if (img) {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          // Draw the specific frame from the panorama
-          ctx.drawImage(
-            img,
-            frameInImage * frameWidth, 0, frameWidth, frameHeight, // Source
-            0, 0, frameWidth, frameHeight // Destination
-          );
+          const img = imagesRef.current[imageIndex];
+          if (img) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(
+              img,
+              frameInImage * frameWidth, 0, frameWidth, frameHeight,
+              0, 0, frameWidth, frameHeight
+            );
+          }
         }
       }
 
@@ -117,9 +109,15 @@ export function EelSlap({ className = "" }: Props) {
     let clientX: number;
     
     if ('touches' in e) {
-      const touches = (e as React.TouchEvent).touches;
+      const touchEvent = e as React.TouchEvent;
+      const touches = touchEvent.touches;
       if (touches && touches.length > 0) {
-        clientX = touches[0].clientX;
+        const touch = touches[0];
+        if (touch) {
+          clientX = touch.clientX;
+        } else {
+          return;
+        }
       } else {
         return;
       }
@@ -129,8 +127,6 @@ export function EelSlap({ className = "" }: Props) {
 
     const relativeX = clientX - rect.left;
     const scaledX = (relativeX / rect.width) * frameWidth;
-    // targetPosition follows the original logic: it maps 0-640
-    // The eel swing direction is inverted relative to movement in the original
     targetPosition.current = frameWidth - Math.max(0, Math.min(frameWidth, scaledX));
   };
 
@@ -143,7 +139,7 @@ export function EelSlap({ className = "" }: Props) {
       style={{ touchAction: 'none', cursor: 'crosshair' }}
     >
       {!isReady && (
-        <div className="absolute inset-0 flex items-center justify-center z-50 bg-black text-white text-4xl font-bold tracking-widest animate-pulse font-sans">
+        <div className="absolute inset-0 flex items-center justify-center z-50 bg-black text-white text-4xl font-bold tracking-widest animate-pulse font-sans text-center px-4">
           LOADING...
         </div>
       )}
