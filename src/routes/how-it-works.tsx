@@ -69,7 +69,7 @@ const SECTIONS: Section[] = [
     heading: "Step 4 — Rendering without jank",
     paragraphs: [
       "A fast swipe can fire pointer events more often than the screen refreshes. Store the latest value and apply it inside a single requestAnimationFrame callback, so the work happens once per painted frame instead of once per event.",
-      "Prefer changes the compositor can handle on its own — transforms and opacity — over anything that forces layout. In our recreation the eel is one element moved with a transform, which keeps the whole interaction on the fast path.",
+      "Prefer changes the compositor can handle on its own — transforms and opacity — over anything that forces layout. In our engine, the eel is rendered with high efficiency, which keeps the whole interaction on the fast path.",
     ],
   },
   {
@@ -109,7 +109,7 @@ function HowItWorks() {
       <PageHeader
         eyebrow="Engineering"
         title="How Eel Slap works"
-        intro="The mechanic is simple enough to explain in a sentence and fiddly enough to get wrong in five ways. Here is the full breakdown, including how our recreation is built."
+        intro="The mechanic is simple enough to explain in a sentence and fiddly enough to get wrong in five ways. Here is the full breakdown of how the effect is achieved."
         trail={[{ label: "How it works" }]}
       />
       <Container className="py-14">
