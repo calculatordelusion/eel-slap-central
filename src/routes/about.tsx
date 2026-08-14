@@ -111,8 +111,7 @@ function About() {
         <div className="max-w-3xl">
           <QuickAnswer>
             <p className="text-muted-foreground">
-              <strong className="text-foreground">Eel Slap</strong> is a single-serving website, first published in
-              2011, where moving your mouse left and right slaps a man in the face with a real eel. It is a browser toy
+              <strong className="text-foreground">Eel Slap!</strong> (often searched as the <strong className="text-foreground">eel slap game</strong> or <strong className="text-foreground">slapping eel</strong> website) is a single-serving website, first published in
               rather than a game: there is no score and no goal. It runs on preloaded photographs, not Flash, which is
               why it still works today.
             </p>

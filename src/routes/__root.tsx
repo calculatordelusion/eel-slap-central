@@ -81,11 +81,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Eel Slap — Play the Classic Eel Slap Animation & Learn Its Story" },
+      { title: "Eel Slap! — Original Eel Slap Game, Slapping Eel & Slap Website" },
       {
         name: "description",
         content:
-          "The complete Eel Slap resource: play the animation, then read its history, mechanics, meme context and fun facts.",
+          "The definitive Eel Slap! archive. Play the original eel slap game, watch the slapping eel, and explore the history of the slap website. Safe, ad-free preservation.",
       },
       { name: "author", content: "Eel Slap Archive" },
       { name: "theme-color", content: "#0b1729" },
@@ -111,12 +111,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "WebSite",
           name: "Eel Slap Archive",
           description:
-            "The definitive digital preservation archive for Eel Slap. Documenting the original 2011 interactive meme, its history, the guy behind the slap, and the science of browser toys.",
+            "The definitive digital preservation archive for Eel Slap! Documenting the original 2011 interactive meme, its history, the guy behind the slap, and the science of browser toys.",
           publisher: {
             "@type": "Organization",
             name: "Eel Slap Archive",
             logo: "https://eelslap.archive/logo.png",
-            knowsAbout: ["Internet Meme History", "Web Preservation", "Interactive Design", "Flash Games Era"]
+            knowsAbout: [
+              "Eel Slap Game",
+              "Slapping Eel Meme",
+              "Internet Meme History",
+              "Web Preservation",
+              "Interactive Design",
+              "Flash Games Era"
+            ]
           },
           potentialAction: {
             "@type": "SearchAction",

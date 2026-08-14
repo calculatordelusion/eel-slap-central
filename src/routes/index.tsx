@@ -99,7 +99,7 @@ function Home() {
               Since 2011 · still slapping
             </span>
             <h1 className="mt-6 text-4xl font-bold leading-[1.05] sm:text-6xl">
-              Experience the legendary <span className="text-gradient">Eel Slap</span>
+              Experience the legendary <span className="text-gradient">Eel Slap!</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
               Experience the iconic <strong className="text-foreground font-semibold">eel slap game</strong> exactly as it was in 2011. Our archive preserves the original <strong className="text-foreground font-semibold">slapping eel</strong> animation with modern performance, serving as the definitive resource for <strong className="text-foreground font-semibold">the slap website</strong> history and culture.
