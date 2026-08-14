@@ -20,7 +20,7 @@ export const Route = createFileRoute("/gallery")({
     ],
     links: [{ rel: "canonical", href: "/gallery" }],
   }),
-  component: Gallery;
+  component: Gallery,
 });
 
 const FRAMES = [0, 0.2, 0.4, 0.55, 0.75, 1];
