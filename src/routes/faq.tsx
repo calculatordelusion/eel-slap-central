@@ -15,9 +15,9 @@ export const Route = createFileRoute("/faq")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/faq" },
+      { property: "og:url", content: "https://eelslap.net/faq" },
     ],
-    links: [{ rel: "canonical", href: "/faq" }],
+    links: [{ rel: "canonical", href: "https://eelslap.net/faq" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -29,6 +29,8 @@ export const Route = createFileRoute("/faq")({
             name: f.q,
             acceptedAnswer: { "@type": "Answer", text: f.a },
           })),
+          author: { "@type": "Organization", name: "Eel Slap" },
+          publisher: { "@type": "Organization", name: "Eel Slap" },
         }),
       },
     ],

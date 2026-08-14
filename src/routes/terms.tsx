@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Container, PageHeader, SectionRenderer } from "@/components/site/Page";
 import type { Section } from "@/lib/site";
 
-const title = "Terms of Use — Eel Slap Archive";
+const title = "Terms of Use — Eel Slap";
 const description =
-  "The terms that apply when you use the Eel Slap Archive: acceptable use, intellectual property, external links and limitation of liability.";
+  "The terms that apply when you use Eel Slap: acceptable use, intellectual property, external links and limitation of liability.";
 
 export const Route = createFileRoute("/terms")({
   head: () => ({
@@ -14,9 +14,9 @@ export const Route = createFileRoute("/terms")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/terms" },
+      { property: "og:url", content: "https://eelslap.net/terms" },
     ],
-    links: [{ rel: "canonical", href: "/terms" }],
+    links: [{ rel: "canonical", href: "https://eelslap.net/terms" }],
   }),
   component: Terms,
 });
@@ -39,7 +39,7 @@ const SECTIONS: Section[] = [
   {
     heading: "Intellectual property",
     paragraphs: [
-      "The written articles, original illustrations, interface and code on this site belong to the Eel Slap Archive. You may quote short passages with a clear credit and a link back. Reproducing whole pages requires written permission.",
+      "The written articles, original illustrations, interface and code on this site belong to Eel Slap. You may quote short passages with a clear credit and a link back. Reproducing whole pages requires written permission.",
       "The original Eel Slap website and its assets belong to their respective owners. This archive is an independent commentary and reference resource; no affiliation or endorsement is claimed or implied.",
     ],
   },

@@ -14,9 +14,9 @@ export const Route = createFileRoute("/play")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/play" },
+      { property: "og:url", content: "https://eelslap.net/play" },
     ],
-    links: [{ rel: "canonical", href: "/play" }],
+    links: [{ rel: "canonical", href: "https://eelslap.net/play" }],
     scripts: [
       {
         type: "application/ld+json",

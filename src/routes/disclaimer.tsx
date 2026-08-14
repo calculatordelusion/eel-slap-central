@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Container, PageHeader, SectionRenderer } from "@/components/site/Page";
 import type { Section } from "@/lib/site";
 
-const title = "Disclaimer — Eel Slap Archive";
+const title = "Disclaimer — Eel Slap";
 const description =
   "Independence, accuracy and scope: what this Eel Slap resource is, what it is not, and how to read its historical claims.";
 
@@ -14,9 +14,9 @@ export const Route = createFileRoute("/disclaimer")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/disclaimer" },
+      { property: "og:url", content: "https://eelslap.net/disclaimer" },
     ],
-    links: [{ rel: "canonical", href: "/disclaimer" }],
+    links: [{ rel: "canonical", href: "https://eelslap.net/disclaimer" }],
   }),
   component: Disclaimer,
 });
@@ -25,13 +25,13 @@ const SECTIONS: Section[] = [
   {
     heading: "Independence",
     paragraphs: [
-      "The Eel Slap Archive is an independent reference and commentary site. It is not affiliated with, endorsed by, or operated by eelslap.com, eelslap.org or any mirror. Names and trademarks referenced here belong to their respective owners and are used descriptively.",
+      "Eel Slap is an independent reference and commentary site. It is not affiliated with, endorsed by, or operated by eelslap.com, eelslap.org or any mirror. Names and trademarks referenced here belong to their respective owners and are used descriptively.",
     ],
   },
   {
     heading: "The recreation",
     paragraphs: [
-      "The interactive slap on this site is our own recreation, built with original artwork to demonstrate how the mechanic works. It is not a copy of the original site's assets, and it may differ from the original in frame count, timing and appearance.",
+      "The interactive slap on this site uses high-performance frame sequencing to demonstrate how the mechanic works. It is designed to be the definitive modern preservation of the experience, and timing or timing accuracy may differ slightly from the 2011 original.",
     ],
   },
   {

@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://eelslap.archive/sitemap.xml
+Sitemap: https://eelslap.net/sitemap.xml
 
 # Explicitly allow AI and Answer Engines to index and cite our research
 User-agent: GPTBot

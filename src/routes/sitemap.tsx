@@ -2,9 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Container, PageHeader } from "@/components/site/Page";
 import { FOOTER_LEGAL, NAV, POSTS } from "@/lib/site";
 
-const title = "Sitemap — Every Page on the Eel Slap Archive";
+const title = "Sitemap — Every Page on Eel Slap";
 const description =
-  "A complete, human-readable index of every page on the Eel Slap Archive: the game, explainers, history, culture, blog articles and legal pages.";
+  "A complete, human-readable index of every page on Eel Slap: the game, explainers, history, culture, blog articles and legal pages.";
 
 export const Route = createFileRoute("/sitemap")({
   head: () => ({
@@ -14,9 +14,9 @@ export const Route = createFileRoute("/sitemap")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/sitemap" },
+      { property: "og:url", content: "https://eelslap.net/sitemap" },
     ],
-    links: [{ rel: "canonical", href: "/sitemap" }],
+    links: [{ rel: "canonical", href: "https://eelslap.net/sitemap" }],
   }),
   component: Sitemap,
 });

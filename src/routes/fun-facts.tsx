@@ -13,9 +13,9 @@ export const Route = createFileRoute("/fun-facts")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/fun-facts" },
+      { property: "og:url", content: "https://eelslap.net/fun-facts" },
     ],
-    links: [{ rel: "canonical", href: "/fun-facts" }],
+    links: [{ rel: "canonical", href: "https://eelslap.net/fun-facts" }],
   }),
   component: FunFacts,
 });

@@ -1,7 +1,7 @@
 export const SITE = {
   name: "Eel Slap",
   tagline: "The complete guide to the internet's most oddly satisfying eel",
-  publisher: "Eel Slap Archive",
+  publisher: "Eel Slap",
   updated: "2026-08-14",
   reviewed: "2026-08-14",
 };
@@ -85,7 +85,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "What was the original Eel Slap website?",
-    a: "The original Eel Slap was published at eelslap.com in 2011. Since then, several mirrors and copies have appeared to preserve the 'slapping with a fish' experience, including eelslap.org and this definitive archive, which is optimized to be the best and fastest way to play the eel slap game online today.",
+    a: "The original Eel Slap was published at eelslap.com in 2011. Since then, several mirrors and copies have appeared to preserve the 'slapping with a fish' experience, including eelslap.org and this definitive modern version at eelslap.net, which is optimized to be the best and fastest way to play the eel slap game online today.",
   },
 ];
 
@@ -112,7 +112,7 @@ export const POSTS: Post[] = [
     slug: "how-eel-slap-became-an-internet-legend",
     title: "How Eel Slap Became an Internet Legend",
     description:
-      "A look at the design decisions, timing and sharing habits that turned a one-joke website into a link people still send in 2026.",
+      "A look at the design decisions, timing and sharing habits that turned a one-joke website into a link people still send.",
     category: "Eel Slap",
     date: "2026-02-11",
     updated: "2026-08-14",

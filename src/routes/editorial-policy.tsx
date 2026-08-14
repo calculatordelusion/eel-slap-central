@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Container, PageHeader, RelatedLinks, SectionRenderer } from "@/components/site/Page";
 import type { Section } from "@/lib/site";
 
-const title = "Editorial & Fact-Checking Policy — Eel Slap Archive";
+const title = "Editorial & Fact-Checking Policy — Eel Slap";
 const description =
-  "How the Eel Slap Archive researches, writes, reviews and corrects its content, including our sourcing standards, update schedule and independence statement.";
+  "How Eel Slap researches, writes, reviews and corrects its content, including our sourcing standards, update schedule and independence statement.";
 
 export const Route = createFileRoute("/editorial-policy")({
   head: () => ({
@@ -14,9 +14,9 @@ export const Route = createFileRoute("/editorial-policy")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/editorial-policy" },
+      { property: "og:url", content: "https://eelslap.net/editorial-policy" },
     ],
-    links: [{ rel: "canonical", href: "/editorial-policy" }],
+    links: [{ rel: "canonical", href: "https://eelslap.net/editorial-policy" }],
   }),
   component: EditorialPolicy,
 });
@@ -25,7 +25,7 @@ const SECTIONS: Section[] = [
   {
     heading: "Who writes this site",
     paragraphs: [
-      "The Eel Slap Archive is an independent project run by a small editorial team with backgrounds in web development and internet history. We are not affiliated with eelslap.com, eelslap.org or any mirror of the original site.",
+      "Eel Slap is an independent project run by a small editorial team with backgrounds in web development and internet history. We are not affiliated with eelslap.com, eelslap.org or any other legacy mirror of the original site.",
     ],
   },
   {
@@ -55,7 +55,7 @@ const SECTIONS: Section[] = [
   {
     heading: "Review schedule",
     paragraphs: [
-      "Every page carries a last-reviewed date. Reference pages are re-read at least twice a year; anything touching a live external site is checked more often, because link rot is the main way an archive quietly becomes wrong.",
+      "Every page carries a last-reviewed date. Reference pages are re-read at least twice a year; anything touching a live external site is checked more often, because link rot is the main way a resource quietly becomes wrong.",
     ],
   },
   {

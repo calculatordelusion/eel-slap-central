@@ -21,7 +21,7 @@ export function Footer() {
               <span className="font-display text-xl font-bold tracking-tight">Eel Slap</span>
             </Link>
             <p className="mt-6 max-w-xs text-[0.9375rem] leading-relaxed text-muted-foreground">
-              The definitive, ad-free digital preservation project documenting the original 2011 internet phenomenon. Built for performance and historic accuracy.
+              The definitive, ad-free digital preservation of the original 2011 internet phenomenon. Built for performance and historic accuracy.
             </p>
             <div className="mt-10">
               <h3 className="text-sm font-semibold text-foreground">Stay Updated</h3>

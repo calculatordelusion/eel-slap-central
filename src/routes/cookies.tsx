@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Container, PageHeader, SectionRenderer } from "@/components/site/Page";
 import type { Section } from "@/lib/site";
 
-const title = "Cookie Policy — Eel Slap Archive";
+const title = "Cookie Policy — Eel Slap";
 const description =
   "What this site stores in your browser and why. We use no advertising or tracking cookies; only a single local preference for your chosen theme.";
 
@@ -14,9 +14,9 @@ export const Route = createFileRoute("/cookies")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: "/cookies" },
+      { property: "og:url", content: "https://eelslap.net/cookies" },
     ],
-    links: [{ rel: "canonical", href: "/cookies" }],
+    links: [{ rel: "canonical", href: "https://eelslap.net/cookies" }],
   }),
   component: Cookies,
 });
