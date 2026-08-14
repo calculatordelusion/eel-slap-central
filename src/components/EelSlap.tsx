@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Maximize2, Minimize2 } from "lucide-react";
 
 type Props = {
   className?: string;
@@ -124,49 +125,61 @@ export function EelSlap({ className = "", fullPage = false }: Props & { fullPage
       let clientX: number;
       
       if ('touches' in e) {
-        const touchEvent = e as TouchEvent;
-        const touches = touchEvent.touches;
-        if (touches && touches.length > 0) {
-          const touch = touches[0];
-          if (touch) {
-            clientX = touch.clientX;
-          } else {
-            return;
-          }
-        } else {
-          return;
-        }
+        const touch = (e as TouchEvent).touches[0] || (e as TouchEvent).changedTouches[0];
+        if (!touch) return;
+        clientX = touch.clientX;
       } else {
         clientX = (e as MouseEvent).clientX;
       }
 
-      // Map clientX to the relative width of the container
-      // If clientX < rect.left, it's 0. If clientX > rect.right, it's 1.
+      // Accurate mapping: we want the horizontal position relative to the container,
+      // but tracked GLOBALLY across the entire window.
       const relativeX = (clientX - rect.left) / rect.width;
+      
+      // Clamp to [0, 1] so it doesn't break at screen edges
       const clampedX = Math.max(0, Math.min(1, relativeX));
       
       // Calculate targetPosition based on sourceFrameWidth (320)
       targetPosition.current = sourceFrameWidth - (clampedX * sourceFrameWidth);
     };
 
-    window.addEventListener('mousemove', handleGlobalPointerMove);
+    window.addEventListener('mousemove', handleGlobalPointerMove, { passive: true });
     window.addEventListener('touchmove', handleGlobalPointerMove, { passive: false });
+    window.addEventListener('touchstart', handleGlobalPointerMove, { passive: false });
 
     return () => {
       window.removeEventListener('mousemove', handleGlobalPointerMove);
       window.removeEventListener('touchmove', handleGlobalPointerMove);
+      window.removeEventListener('touchstart', handleGlobalPointerMove);
     };
   }, [isReady]);
 
-  // Remove local handlers from the div
-  const handlePointerMove = () => {};
+  const toggleFullScreen = () => {
+    if (!containerRef.current) return;
+    if (!document.fullscreenElement) {
+      containerRef.current.requestFullscreen().catch(err => {
+        console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+      });
+    } else {
+      document.exitFullscreen();
+    }
+  };
+
+
+  const [isFullScreen, setIsFullScreen] = useState(false);
+
+  useEffect(() => {
+    const handleFsChange = () => {
+      setIsFullScreen(!!document.fullscreenElement);
+    };
+    document.addEventListener('fullscreenchange', handleFsChange);
+    return () => document.removeEventListener('fullscreenchange', handleFsChange);
+  }, []);
 
   return (
     <div 
-      className={`relative aspect-[4/3] w-full max-w-[800px] mx-auto overflow-hidden bg-black shadow-2xl rounded-xl border border-white/10 ${className}`}
+      className={`relative aspect-[4/3] w-full max-w-[800px] mx-auto overflow-hidden bg-black shadow-2xl rounded-xl border border-white/10 ${className} group`}
       ref={containerRef}
-      onMouseMove={handlePointerMove}
-      onTouchMove={handlePointerMove}
       style={{ touchAction: 'none' }}
     >
       {!isReady && (
@@ -188,6 +201,16 @@ export function EelSlap({ className = "", fullPage = false }: Props & { fullPage
         className="w-full h-full object-contain transition-opacity duration-300"
         style={{ opacity: isReady ? 1 : 0 }}
       />
+
+      {isReady && (
+        <button
+          onClick={toggleFullScreen}
+          className="absolute bottom-4 right-4 z-50 p-2 rounded-full bg-black/50 text-white/70 hover:text-white hover:bg-black/80 transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 backdrop-blur-sm border border-white/10"
+          aria-label={isFullScreen ? "Exit full screen" : "Enter full screen"}
+        >
+          {isFullScreen ? <Minimize2 size={20} /> : <Maximize2 size={20} />}
+        </button>
+      )}
     </div>
   );
 }
