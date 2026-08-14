@@ -13,10 +13,13 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as FunFactsRouteImport } from './routes/fun-facts'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as HistoryRouteImport } from './routes/history'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as MemeHistoryRouteImport } from './routes/meme-history'
 import { Route as PlayRouteImport } from './routes/play'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -36,6 +39,11 @@ const FaqRoute = FaqRouteImport.update({
 const FunFactsRoute = FunFactsRouteImport.update({
   id: '/fun-facts',
   path: '/fun-facts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HistoryRoute = HistoryRouteImport.update({
@@ -58,26 +66,42 @@ const PlayRoute = PlayRouteImport.update({
   path: '/play',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/faq': typeof FaqRoute
   '/fun-facts': typeof FunFactsRoute
+  '/gallery': typeof GalleryRoute
   '/history': typeof HistoryRoute
   '/how-it-works': typeof HowItWorksRoute
   '/meme-history': typeof MemeHistoryRoute
   '/play': typeof PlayRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/faq': typeof FaqRoute
   '/fun-facts': typeof FunFactsRoute
+  '/gallery': typeof GalleryRoute
   '/history': typeof HistoryRoute
   '/how-it-works': typeof HowItWorksRoute
   '/meme-history': typeof MemeHistoryRoute
   '/play': typeof PlayRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -85,10 +109,13 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/faq': typeof FaqRoute
   '/fun-facts': typeof FunFactsRoute
+  '/gallery': typeof GalleryRoute
   '/history': typeof HistoryRoute
   '/how-it-works': typeof HowItWorksRoute
   '/meme-history': typeof MemeHistoryRoute
   '/play': typeof PlayRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -97,30 +124,39 @@ export interface FileRouteTypes {
     | '/about'
     | '/faq'
     | '/fun-facts'
+    | '/gallery'
     | '/history'
     | '/how-it-works'
     | '/meme-history'
     | '/play'
+    | '/blog/$slug'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/faq'
     | '/fun-facts'
+    | '/gallery'
     | '/history'
     | '/how-it-works'
     | '/meme-history'
     | '/play'
+    | '/blog/$slug'
+    | '/blog'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/faq'
     | '/fun-facts'
+    | '/gallery'
     | '/history'
     | '/how-it-works'
     | '/meme-history'
     | '/play'
+    | '/blog/$slug'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -128,10 +164,13 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   FaqRoute: typeof FaqRoute
   FunFactsRoute: typeof FunFactsRoute
+  GalleryRoute: typeof GalleryRoute
   HistoryRoute: typeof HistoryRoute
   HowItWorksRoute: typeof HowItWorksRoute
   MemeHistoryRoute: typeof MemeHistoryRoute
   PlayRoute: typeof PlayRoute
+  BlogSlugRoute: typeof BlogSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -164,6 +203,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FunFactsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/history': {
       id: '/history'
       path: '/history'
@@ -192,6 +238,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlayRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -200,10 +260,13 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   FaqRoute: FaqRoute,
   FunFactsRoute: FunFactsRoute,
+  GalleryRoute: GalleryRoute,
   HistoryRoute: HistoryRoute,
   HowItWorksRoute: HowItWorksRoute,
   MemeHistoryRoute: MemeHistoryRoute,
   PlayRoute: PlayRoute,
+  BlogSlugRoute: BlogSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
