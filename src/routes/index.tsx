@@ -18,7 +18,9 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://eel-slap-archive.lovable.app/" },
+      { property: "og:image", content: "https://eel-slap-archive.lovable.app/social-share.png" },
+      { name: "twitter:image", content: "https://eel-slap-archive.lovable.app/social-share.png" },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
