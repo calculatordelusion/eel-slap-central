@@ -56,12 +56,15 @@ export function EelSlap({ className = "" }: Props) {
     const rect = containerRef.current.getBoundingClientRect();
     let clientX: number;
     
-    if ('touches' in e && e.touches.length > 0) {
-      clientX = e.touches[0].clientX;
-    } else if ('clientX' in (e as any)) {
-      clientX = (e as React.MouseEvent).clientX;
+    if ('touches' in e) {
+      const touchEvent = e as React.TouchEvent;
+      if (touchEvent.touches && touchEvent.touches.length > 0) {
+        clientX = touchEvent.touches[0].clientX;
+      } else {
+        return;
+      }
     } else {
-      return;
+      clientX = (e as React.MouseEvent).clientX;
     }
 
     const relativeX = clientX - rect.left;
