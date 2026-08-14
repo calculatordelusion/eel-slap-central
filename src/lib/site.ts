@@ -1,5 +1,5 @@
 export const SITE = {
-  name: "'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            use the same script as on compitor website and embded it on our website",
+  name: "Eel Slap",
   tagline: "The complete guide to the internet's most oddly satisfying eel",
   publisher: "Eel Slap Archive",
   updated: "2026-08-14",

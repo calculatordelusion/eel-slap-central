@@ -99,7 +99,7 @@ function Home() {
               Since 2011 · still slapping
             </span>
             <h1 className="mt-6 text-4xl font-bold leading-[1.05] sm:text-6xl">
-              Experience the legendary <span className="text-gradient">'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            use the same script as on compitor website and embded it on our website</span>
+              Experience the legendary <span className="text-gradient">Eel Slap</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
               Discover the iconic internet meme, play the famous Eel Slap animation, learn its history, explore fun
