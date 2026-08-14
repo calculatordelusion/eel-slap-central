@@ -131,7 +131,7 @@ function Home() {
           <div className="animate-rise" style={{ animationDelay: "120ms" }}>
             <EelSlap />
             <p className="mt-4 text-center text-sm text-muted-foreground">
-              Move your cursor across the image — or swipe on a touch screen.
+              Interact with the original Eel Slap animation above.
             </p>
           </div>
         </Container>
