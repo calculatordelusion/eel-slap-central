@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AuthorBox, Container, PageHeader, QuickAnswer, RelatedLinks, SectionRenderer } from "@/components/site/Page";
 import type { Section } from "@/lib/site";
 
-const title = "Internet Meme History: Where Eel Slap Fits In";
+const title = "Internet Meme History: Eel Slap & The Slapping Eel Phenomenon";
 const description =
-  "A guided history of internet memes from email forwards to short-form video, and why interactive jokes like Eel Slap occupy a distinct, short-lived branch of that story.";
+  "How Eel Slap fits into the history of internet memes. Explore the evolution from email forwards to the slapping eel game and why interactive browser toys are a unique cultural artifact.";
 
 export const Route = createFileRoute("/meme-history")({
   head: () => ({

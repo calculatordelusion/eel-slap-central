@@ -116,13 +116,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             "@type": "Organization",
             name: "Eel Slap Archive",
             logo: "https://eelslap.archive/logo.png",
+            description: "The official archive and research hub for Eel Slap! and internet meme culture.",
             knowsAbout: [
               "Eel Slap Game",
               "Slapping Eel Meme",
               "Internet Meme History",
               "Web Preservation",
               "Interactive Design",
-              "Flash Games Era"
+              "Flash Games Era",
+              "Single Serving Websites",
+              "Browser Toys",
+              "Digital Folklore"
             ]
           },
           potentialAction: {

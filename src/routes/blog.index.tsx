@@ -2,9 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Container, PageHeader, RelatedLinks } from "@/components/site/Page";
 import { POSTS } from "@/lib/site";
 
-const title = "Eel Slap Blog — Internet Culture, Web History & Browser Toys";
+const title = "Eel Slap Blog — Internet Meme History, Web Toys & Archive News";
 const description =
-  "Essays on Eel Slap, Flash game history, single-serving websites, meme evolution and the design of small interactive web toys. Researched, sourced and regularly updated.";
+  "Official Eel Slap blog covering internet meme history, the slap website legacy, and the science of interactive browser toys. Deep dives into early web culture and preservation.";
 
 export const Route = createFileRoute("/blog/")({
   head: () => ({
