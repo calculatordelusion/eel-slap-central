@@ -21,15 +21,17 @@ export function EelSlap({ className = "" }: Props) {
     if (loadedCount === 4) {
       const timer = setTimeout(() => {
         setIsReady(true);
-        const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        const isTouch = 'ontouchstart' in window || (navigator.maxTouchPoints > 0);
         if (isTouch) {
           setShowIntro(true);
           const hideTimer = setTimeout(() => setShowIntro(false), 4000);
           return () => clearTimeout(hideTimer);
         }
+        return () => {};
       }, 500);
       return () => clearTimeout(timer);
     }
+    return () => {};
   }, [loadedCount]);
 
   useEffect(() => {
@@ -56,7 +58,7 @@ export function EelSlap({ className = "" }: Props) {
     
     if ('touches' in e && e.touches.length > 0) {
       clientX = e.touches[0].clientX;
-    } else if ('clientX' in e) {
+    } else if ('clientX' in (e as any)) {
       clientX = (e as React.MouseEvent).clientX;
     } else {
       return;
