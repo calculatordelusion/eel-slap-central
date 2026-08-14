@@ -17,8 +17,8 @@ export function EelSlap({ className = "" }: Props) {
   const imagesRef = useRef<HTMLImageElement[]>([]);
 
   const totalFrames = 93;
-  const frameWidth = 640;
-  const frameHeight = 480;
+  const frameWidth = 320;
+  const frameHeight = 240;
 
   const frameMap = [24, 23, 24, 23];
 
