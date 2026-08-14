@@ -41,7 +41,8 @@ export const Route = createFileRoute("/blog/")({
 
 function BlogIndex() {
   const categories = Array.from(new Set(POSTS.map((p) => p.category)));
-  const [featured, ...rest] = POSTS;
+  const featured = POSTS[0]!;
+  const rest = POSTS.slice(1);
 
   return (
     <>

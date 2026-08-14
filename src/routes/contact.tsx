@@ -34,9 +34,18 @@ function Contact() {
     const name = form.name.trim();
     const email = form.email.trim();
     const message = form.message.trim();
-    if (name.length < 2) return toast.error("Please enter your name.");
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return toast.error("Please enter a valid email address.");
-    if (message.length < 20) return toast.error("Please add a little more detail (at least 20 characters).");
+    if (name.length < 2) {
+      toast.error("Please enter your name.");
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+    if (message.length < 20) {
+      toast.error("Please add a little more detail (at least 20 characters).");
+      return;
+    }
     setForm({ name: "", email: "", subject: "Correction", message: "" });
     toast.success("Thanks — your message has been recorded. We reply to corrections first.");
   };
