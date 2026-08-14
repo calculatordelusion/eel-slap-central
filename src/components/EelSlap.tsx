@@ -7,15 +7,43 @@ type Props = {
 
 export function EelSlap({ className = "" }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const allImagesRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const [loadedCount, setLoadedCount] = useState(0);
   const [isReady, setIsReady] = useState(false);
   const [showIntro, setShowIntro] = useState(false);
+  
   const currentPosition = useRef(0);
   const targetPosition = useRef(0);
+  const imagesRef = useRef<HTMLImageElement[]>([]);
 
   const totalFrames = 93;
   const frameWidth = 640;
+  const frameHeight = 480;
+
+  // Frame counts per image based on original logic:
+  // image1: 24 frames
+  // image2: 23 frames
+  // image3: 24 frames
+  // image4: 23 frames
+  const frameMap = [24, 23, 24, 23];
+
+  useEffect(() => {
+    const imgUrls = [
+      "/eelslap_panorama1.jpg",
+      "/eelslap_panorama2.jpg",
+      "/eelslap_panorama3.jpg",
+      "/eelslap_panorama4.jpg"
+    ];
+
+    imgUrls.forEach((url, i) => {
+      const img = new Image();
+      img.src = url;
+      img.onload = () => {
+        imagesRef.current[i] = img;
+        setLoadedCount(prev => prev + 1);
+      };
+    });
+  }, []);
 
   useEffect(() => {
     if (loadedCount === 4) {
@@ -35,22 +63,53 @@ export function EelSlap({ className = "" }: Props) {
   }, [loadedCount]);
 
   useEffect(() => {
-    const handleUpdate = () => {
-      currentPosition.current += (targetPosition.current - currentPosition.current) / 4;
-      const currentSlap = (currentPosition.current / frameWidth) * totalFrames;
-      const clampedSlap = Math.min(totalFrames, Math.max(0, currentSlap));
-      const pos = Math.round(clampedSlap) * -frameWidth;
+    let animationFrameId: number;
 
-      if (allImagesRef.current) {
-        allImagesRef.current.style.left = `${pos}px`;
+    const render = () => {
+      // Smooth movement
+      currentPosition.current += (targetPosition.current - currentPosition.current) / 4;
+      
+      const canvas = canvasRef.current;
+      const ctx = canvas?.getContext('2d');
+      
+      if (ctx && canvas && isReady) {
+        // Map currentPosition (0-640) to frame (0-92)
+        const currentFrameIndex = Math.min(totalFrames - 1, Math.max(0, Math.round((currentPosition.current / frameWidth) * (totalFrames - 1))));
+        
+        // Find which image contains this frame
+        let cumulativeFrames = 0;
+        let imageIndex = 0;
+        let frameInImage = 0;
+
+        for (let i = 0; i < frameMap.length; i++) {
+          if (currentFrameIndex < cumulativeFrames + frameMap[i]) {
+            imageIndex = i;
+            frameInImage = currentFrameIndex - cumulativeFrames;
+            break;
+          }
+          cumulativeFrames += frameMap[i];
+        }
+
+        const img = imagesRef.current[imageIndex];
+        if (img) {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          // Draw the specific frame from the panorama
+          ctx.drawImage(
+            img,
+            frameInImage * frameWidth, 0, frameWidth, frameHeight, // Source
+            0, 0, frameWidth, frameHeight // Destination
+          );
+        }
       }
+
+      animationFrameId = requestAnimationFrame(render);
     };
 
-    const interval = setInterval(handleUpdate, 30);
-    return () => clearInterval(interval);
-  }, []);
+    render();
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [isReady]);
 
-  const handleMouseMove = (e: React.MouseEvent | React.TouchEvent) => {
+  const handlePointerMove = (e: React.MouseEvent | React.TouchEvent) => {
     const container = containerRef.current;
     if (!container) return;
     
@@ -58,15 +117,9 @@ export function EelSlap({ className = "" }: Props) {
     let clientX: number;
     
     if ('touches' in e) {
-      const touchEvent = e as React.TouchEvent;
-      const touches = touchEvent.touches;
+      const touches = (e as React.TouchEvent).touches;
       if (touches && touches.length > 0) {
-        const touch = touches[0];
-        if (touch) {
-          clientX = touch.clientX;
-        } else {
-          return;
-        }
+        clientX = touches[0].clientX;
       } else {
         return;
       }
@@ -76,20 +129,18 @@ export function EelSlap({ className = "" }: Props) {
 
     const relativeX = clientX - rect.left;
     const scaledX = (relativeX / rect.width) * frameWidth;
+    // targetPosition follows the original logic: it maps 0-640
+    // The eel swing direction is inverted relative to movement in the original
     targetPosition.current = frameWidth - Math.max(0, Math.min(frameWidth, scaledX));
-  };
-
-  const imageLoaded = () => {
-    setLoadedCount(prev => prev + 1);
   };
 
   return (
     <div 
       className={`relative aspect-[4/3] w-full max-w-[640px] mx-auto overflow-hidden bg-black shadow-2xl rounded-xl border border-white/10 ${className}`}
       ref={containerRef}
-      onMouseMove={handleMouseMove}
-      onTouchMove={handleMouseMove}
-      style={{ touchAction: 'none' }}
+      onMouseMove={handlePointerMove}
+      onTouchMove={handlePointerMove}
+      style={{ touchAction: 'none', cursor: 'crosshair' }}
     >
       {!isReady && (
         <div className="absolute inset-0 flex items-center justify-center z-50 bg-black text-white text-4xl font-bold tracking-widest animate-pulse font-sans">
@@ -99,44 +150,17 @@ export function EelSlap({ className = "" }: Props) {
 
       {showIntro && (
         <div className="absolute inset-0 flex items-center justify-center z-40 bg-black/40 text-white text-xl text-center px-6 pointer-events-none transition-opacity duration-1000 font-sans">
-          Drag your finger across the screen to slap!
+          Drag horizontally to slap!
         </div>
       )}
 
-      <div 
-        ref={allImagesRef}
-        className="absolute top-0 flex transition-opacity duration-[3000ms]"
-        style={{ 
-          opacity: isReady ? 1 : 0,
-          height: '100%',
-          display: isReady ? 'flex' : 'none'
-        }}
-      >
-        <img 
-          src="/eelslap_panorama1.jpg" 
-          onLoad={imageLoaded}
-          className="h-full w-auto max-w-none"
-          alt=""
-        />
-        <img 
-          src="/eelslap_panorama2.jpg" 
-          onLoad={imageLoaded}
-          className="h-full w-auto max-w-none"
-          alt=""
-        />
-        <img 
-          src="/eelslap_panorama3.jpg" 
-          onLoad={imageLoaded}
-          className="h-full w-auto max-w-none"
-          alt=""
-        />
-        <img 
-          src="/eelslap_panorama4.jpg" 
-          onLoad={imageLoaded}
-          className="h-full w-auto max-w-none"
-          alt=""
-        />
-      </div>
+      <canvas 
+        ref={canvasRef}
+        width={frameWidth}
+        height={frameHeight}
+        className="w-full h-full object-contain transition-opacity duration-500"
+        style={{ opacity: isReady ? 1 : 0 }}
+      />
     </div>
   );
 }
