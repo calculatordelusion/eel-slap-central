@@ -92,8 +92,8 @@ const SECTIONS: Section[] = [
   {
     heading: "The digital preservation mission",
     paragraphs: [
-      "This archive exists to do more than just mirror the original experience. We are dedicated to the preservation of 'single-serving' web culture—a era between 2007 and 2013 where a joke could be a standalone domain and a link was the unit of currency.",
-      "By rebuilding the engine for modern browsers and documenting the technical context, we ensure that the specific 'feel' of the original fish slap remains accessible as the web's underlying infrastructure continues to evolve.",
+      "This site exists to do more than just provide the experience. We are dedicated to the preservation of 'single-serving' web culture—an era where a joke could be a standalone domain and a link was the unit of currency.",
+      "By maintaining the engine for modern browsers and documenting the technical context, we ensure that the specific 'feel' of the original fish slap remains accessible as the web's underlying infrastructure continues to evolve.",
     ],
   },
 ];
@@ -111,9 +111,7 @@ function About() {
         <div className="max-w-3xl">
           <QuickAnswer>
             <p className="text-muted-foreground">
-              <strong className="text-foreground">Eel Slap!</strong> (often searched as the <strong className="text-foreground">eel slap game</strong> or <strong className="text-foreground">slapping eel</strong> website) is a single-serving website, first published in
-              rather than a game: there is no score and no goal. It runs on preloaded photographs, not Flash, which is
-              why it still works today.
+              <strong className="text-foreground">Eel Slap!</strong> (often searched as the <strong className="text-foreground">eel slap game</strong> or <strong className="text-foreground">slapping eel</strong> website) is a single-serving website, first published in 2011, where you swing a live eel into a man's face. It is a browser toy rather than a game: there is no score and no goal. It runs on preloaded photographs, not Flash, which is why it still works today.
             </p>
           </QuickAnswer>
 
