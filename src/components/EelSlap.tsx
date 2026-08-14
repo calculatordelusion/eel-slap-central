@@ -75,12 +75,15 @@ export function EelSlap({ className = "" }: Props) {
           let frameInImage = 0;
 
           for (let i = 0; i < frameMap.length; i++) {
-            if (currentFrameIndex < cumulativeFrames + frameMap[i]) {
+            const count = frameMap[i];
+            if (count !== undefined && currentFrameIndex < cumulativeFrames + count) {
               imageIndex = i;
               frameInImage = currentFrameIndex - cumulativeFrames;
               break;
             }
-            cumulativeFrames += frameMap[i];
+            if (count !== undefined) {
+              cumulativeFrames += count;
+            }
           }
 
           const images = imagesRef.current;
