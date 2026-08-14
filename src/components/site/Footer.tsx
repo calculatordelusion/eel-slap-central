@@ -18,7 +18,7 @@ export function Footer() {
               <span className="bg-gradient-primary flex h-10 w-10 items-center justify-center rounded-2xl shadow-glow">
                 <span className="text-xl" aria-hidden="true">🐟</span>
               </span>
-              <span className="font-display text-xl font-bold tracking-tight">Eel Slap Archive</span>
+              <span className="font-display text-xl font-bold tracking-tight">Eel Slap</span>
             </Link>
             <p className="mt-6 max-w-xs text-[0.9375rem] leading-relaxed text-muted-foreground">
               The definitive, ad-free digital preservation project documenting the original 2011 internet phenomenon. Built for performance and historic accuracy.
